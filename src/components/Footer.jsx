@@ -39,7 +39,7 @@ const Footer = ({ setCurrentPage }) => {
             <h4>Direct Navigation</h4>
             <ul className="footer-links">
               <li>
-                <button 
+                <button
                   style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                   onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}
                 >
@@ -47,7 +47,7 @@ const Footer = ({ setCurrentPage }) => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                   onClick={() => { setCurrentPage('about'); window.scrollTo(0, 0); }}
                 >
@@ -55,7 +55,7 @@ const Footer = ({ setCurrentPage }) => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                   onClick={() => { setCurrentPage('collections'); window.scrollTo(0, 0); }}
                 >
@@ -63,7 +63,7 @@ const Footer = ({ setCurrentPage }) => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                   onClick={() => { setCurrentPage('facilities'); window.scrollTo(0, 0); }}
                 >
@@ -76,10 +76,10 @@ const Footer = ({ setCurrentPage }) => {
           <div className="footer-column">
             <h4>Operations Floor</h4>
             <ul className="footer-links">
-              <li><a href="#facilities">Spinning Yarns</a></li>
-              <li><a href="#facilities">Weaving Looms</a></li>
-              <li><a href="#facilities">Wet Processing</a></li>
-              <li><a href="#facilities">Manufacturing</a></li>
+              <li><a href="#/facilities?tab=spinning">Spinning Yarns</a></li>
+              <li><a href="#/facilities?tab=weaving">Weaving Looms</a></li>
+              <li><a href="#/facilities?tab=wet_processing">Wet Processing</a></li>
+              <li><a href="#/facilities?tab=manufacturing">Manufacturing</a></li>
             </ul>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = ({ setCurrentPage }) => {
           </p>
           <ul className="footer-bottom-links">
             <li>
-              <button 
+              <button
                 style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                 onClick={() => { setCurrentPage('about'); window.scrollTo(0, 0); }}
               >
@@ -108,7 +108,7 @@ const Footer = ({ setCurrentPage }) => {
               </button>
             </li>
             <li>
-              <button 
+              <button
                 style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                 onClick={() => { setCurrentPage('about'); window.scrollTo(0, 0); }}
               >
@@ -116,7 +116,7 @@ const Footer = ({ setCurrentPage }) => {
               </button>
             </li>
             <li>
-              <button 
+              <button
                 style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                 onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}
               >

@@ -26,10 +26,16 @@ const Facilities = ({
         {/* 3D Animated Card Grid */}
         <div className="facilities-cards-grid">
           {FACILITY_STEPS.map((facility, idx) => {
+            const tabs = ['spinning', 'weaving', 'wet_processing', 'manufacturing'];
             return (
               <div
                 key={idx}
                 className="facility-interactive-card"
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  setActiveFacilityIndex(idx);
+                  window.location.hash = `#/facilities?tab=${tabs[idx]}`;
+                }}
               >
                 {/* Top Header Row */}
                 <div className="facility-card-header">

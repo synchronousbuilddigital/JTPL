@@ -131,18 +131,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
                 />
               </div>
 
-              {/* Gold Circular Spinning Monogram */}
-              <div className="hero-spinning-monogram-container">
-                <svg viewBox="0 0 100 100" className="hero-spinning-monogram-svg">
-                  <path id="monogramPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text fill="var(--accent)" fontSize="5.5" fontWeight="700" letterSpacing="0.8">
-                    <textPath href="#monogramPath" startOffset="0%">
-                      • SPUN IN INDIA • EXPORTED WORLDWIDE • SPUN IN INDIA • EXPORTED WORLDWIDE
-                    </textPath>
-                  </text>
-                </svg>
-                <div className="monogram-center-star">★</div>
-              </div>
+
             </div>
           </div>
 

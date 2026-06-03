@@ -11,6 +11,11 @@ import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
 import bathBlanketsCat from '../assets/bath_blankets_cat.png';
 import qualityLabImg from '../assets/quality_lab.png';
 
+// Import newly generated actual images
+import wetSoftFlowDyeingImg from '../assets/wet_soft_flow_dyeing_actual.png';
+import mfgAutoSpreadingImg from '../assets/mfg_auto_spreading_actual.png';
+import weavingDirectWarpingImg from '../assets/weaving_direct_warping_actual.png';
+
 // B2B Collections Coverflow Database
 export const COLLECTIONS_DATA = [
   { title: 'Terry Towels', subtitle: 'R • P • N Series', image: heroTowelsImg, desc: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders for global B2B clients.' },
@@ -52,69 +57,69 @@ export const FACILITY_STEPS = [
     short: '02 WEAVING',
     location: 'Sivagangai, Tamil Nadu',
     coordinates: '9.8433° N, 78.4809° E',
-    description: 'Our weaving plants feature high-speed, shuttleless Toyota Air-Jet looms and premium European Rapier looms. With computerized electronic jacquards and dobby attachments, we weave intricate borders, structural waffle patterns, and dense Terry piles with mathematical loop height accuracy.',
+    description: 'Our weaving division operates state-of-the-art winding, direct warping, sectional warping, and sizing lines. These preparation stages ensure warp beams are created with uniform tension and protective coating, setting the foundation for zero-defect, high-speed weaving of our premium Terry collections.',
     specs: {
-      'Loom Fleet': '120+ High-speed Looms',
-      'Daily Capacity': '25,000 Meters',
-      'Weaving Tech': 'Toyota Air-Jet & European Rapier',
-      'Pattern Control': 'Electronic Jacquards & Waffle Dobby'
+      'Winding Fleet': 'Schlafhorst Autoconer lines',
+      'Warping speed': 'Up to 1,000 meters per minute',
+      'Sizing Tech': 'Multi-cylinder sizing range',
+      'Processing speed': 'Up to 150 meters per minute'
     },
     metrics: [
-      { label: 'Loom Automation Index', value: 94 },
-      { label: 'Weft Insertion Speed', value: 91 }
+      { label: 'Warp Tension Uniformity', value: 98 },
+      { label: 'Sizing Yarn Protection', value: 96 }
     ],
     highlights: [
-      'High-density Terry weave loop height control',
-      'Fully-automated electronic pattern dobby attachments',
-      'Real-time structural warp defect laser scanner'
+      'Laser-guided sectional warping drum precision',
+      'Fully automated computerized sizing kitchen',
+      'Knot-free air-spliced yarn package winding'
     ],
-    image: weavingLoomsImg
+    image: weavingDirectWarpingImg
   },
   {
     title: 'Wet Processing',
     short: '03 PROCESSING',
-    location: 'Madurai Industrial Zone',
-    coordinates: '9.9312° N, 78.1218° E',
-    description: 'We run a fully automated continuous bleaching range and soft-flow dyeing plant using eco-friendly, low-liquor ratio machinery. The facility is anchored by a state-of-the-art biological Effluent Treatment Plant (ETP) featuring Zero Liquid Discharge (ZLD) to recycle 98% of process water.',
+    location: 'Kappalur, Madurai',
+    coordinates: '9.8732° N, 78.0754° E',
+    description: 'Our wet processing division operates computerized soft-flow and jigger dyeing machines, open-width stenter frames, continuous dyeing ranges, high-capacity tumble dryers, and precise mechanical raising units to deliver vibrant, soft, and stable fabrics.',
     specs: {
-      'Processing Tech': 'Continuous Bleaching & Soft-flow Dyeing',
-      'Daily Dye Weight': '15 Tons Capacity',
-      'Water Recycling': 'Zero Liquid Discharge (ZLD) Plant',
-      'Dye Compliance': 'Oeko-Tex Standard 100 & GOTS Approved'
+      'Dyeing Tech': 'Soft-Flow & Jigger Systems',
+      'Stretching Tech': '8-Chamber Open Stenter frames',
+      'Drying Tech': 'Steam-heated industrial tumble dryers',
+      'Napping Tech': 'Precision wire raising cylinders'
     },
     metrics: [
-      { label: 'Water Recovery Rate', value: 98 },
-      { label: 'Color Fastness Index', value: 97 }
+      { label: 'Color Fastness Index', value: 98 },
+      { label: 'Weft Straightness Accuracy', value: 99 }
     ],
     highlights: [
-      '98% of process water recycled back into operations',
-      'Low-liquor ratio eco-efficient dye vessels',
-      '100% biodegradable GOTS organic dye inputs'
+      'GOTS and OEKO-TEX Standard 100 non-toxic dyes',
+      'Zero Liquid Discharge biological ETP water recycling',
+      'Mechanical raising pile-fluffiness enhancement control'
     ],
-    image: heroTowelsImg
+    image: wetSoftFlowDyeingImg
   },
   {
-    title: 'Precision Stitching',
-    short: '04 STITCHING',
-    location: 'Madurai Mill Complex',
-    coordinates: '9.9254° N, 78.1402° E',
-    description: 'Our modern fabrication floor is equipped with specialized automatic hem-stitching lines, fabric cutters, and heavy-duty sewing equipment. Each item undergoes rigorous manual checkups under high-intensity inspection tables, followed by metal-detector scanning.',
+    title: 'Manufacturing',
+    short: '04 MANUFACTURING',
+    location: 'Madurai Industrial Zone',
+    coordinates: '9.9392° N, 78.1218° E',
+    description: 'Our manufacturing division coordinates high-speed fabric spreading, computerized cutting, automated packaging, computerized stitching, manual sewing machines, and industrial overlock units to produce flawless finished linens.',
     specs: {
-      'Stitching Lines': '12 Fully-Automated Hemming Lines',
-      'Fabric Prep': 'Intelligent Laser Fabric Cutters',
-      'Quality Control': 'High-Intensity Metal Detectors',
-      'Export Packing': 'Compression Bales / Marine Containers'
+      'Cutting Tech': 'Computerized CNC Cutting Heads',
+      'Stitching Tech': 'Automated Hemming & Side Seamers',
+      'Overlock Speed': 'Up to 7,500 stitches per minute',
+      'Packing Line': 'Automatic folding and poly-bagging'
     },
     metrics: [
-      { label: 'Stitch Precision Index', value: 99 },
-      { label: 'Defect Free Outflow', value: 100 }
+      { label: 'Stitch Precision Rating', value: 99 },
+      { label: 'Automation Efficiency', value: 95 }
     ],
     highlights: [
-      '100% manual checkup under high-intensity inspection',
-      'Specialized double-needle secure selvedge borders',
-      'Automatic metal-particle detector scanner pass'
+      'Automated high-speed spreading tension control',
+      'Millimeter-precision CAD cutting layout marker efficiency',
+      'Secure multi-thread overlock fray protection'
     ],
-    image: kitchenLinenImg
+    image: mfgAutoSpreadingImg
   }
 ];
 
@@ -126,20 +131,20 @@ export const DIVISION_LOGS = {
     { time: '09:24:20', level: 'POWER', text: 'Swiss Rieter mill self-powered by Madurai Solar Field.' }
   ],
   1: [
-    { time: '10:14:02', level: 'SYSTEM', text: '120 Toyota Air-Jet looms active at 850 picks per minute.' },
-    { time: '10:14:05', level: 'SENSOR', text: 'Electronic jacquard pattern synchronization confirmed: 100% OK.' },
-    { time: '10:14:11', level: 'SCAN', text: 'Structural Terry warp density scanners operating nominal.' }
+    { time: '10:14:02', level: 'SYSTEM', text: 'Schlafhorst winding lines active at 1,500 m/min.' },
+    { time: '10:14:08', level: 'SENSOR', text: 'Direct warping electronic tension sensors active: 100% stable.' },
+    { time: '10:14:15', level: 'TEMP', text: 'Multi-cylinder steam sizing range: 130°C nominal.' }
   ],
   2: [
-    { time: '11:05:44', level: 'SYSTEM', text: 'Zero Liquid Discharge water recovery pumps at max flow capacity.' },
-    { time: '11:05:48', level: 'SENSOR', text: 'Continuous bleaching water recycling: 98% efficiency rate.' },
-    { time: '11:05:52', level: 'AUDIT', text: 'Oeko-Tex Standard 100 chemical feed validation: COMPLIANT.' }
+    { time: '11:02:15', level: 'SYSTEM', text: 'ETP recycling filters operating at 98.2% throughput.' },
+    { time: '11:02:22', level: 'COLOR', text: 'Computerized dosing system completed shade verification.' },
+    { time: '11:02:30', level: 'ENV', text: 'ZLD chemical recovery logs submitted to central panel.' }
   ],
   3: [
-    { time: '12:30:19', level: 'SYSTEM', text: '12 automated stitch-lines processing double-needle selvedge.' },
-    { time: '12:30:24', level: 'SCAN', text: 'Metal particle detector scanner path validation: 100% SECURE.' },
-    { time: '12:30:31', level: 'SHIPPING', text: 'Marine-grade container compression bale packaging completed.' }
-  ]
+    { time: '11:45:01', level: 'SYSTEM', text: 'Auto cutting CNC tables operating nominal at AQL 1.5.' },
+    { time: '11:45:10', level: 'SENSOR', text: 'Overlock machine sewing speed stabilized at 7,500 SPM.' },
+    { time: '11:45:18', level: 'PACK', text: 'Automated packing and barcode print line online.' }
+  ],
 };
 
 export const HERO_TABS = [
@@ -153,13 +158,13 @@ export const HERO_TABS = [
     badgeText: '35K SPINDLES'
   },
   {
-    label: 'Kinetic Looms',
-    tag: '02 / PRECISION WEAVE',
-    title: 'Woven with absolute structure.',
-    desc: '120 automatic Toyota Air-Jet looms weaving premium terry and leno cell structures with flawless density control in Sivagangai.',
-    metric: { value: '850 PPM', label: 'Weft Insertion Rate' },
-    image: weavingLoomsImg,
-    badgeText: '120 AIR-JET LOOMS'
+    label: 'Kinetic Warping',
+    tag: '02 / WEAVING PREP',
+    title: 'Warp structure prepared for the loom.',
+    desc: 'Modern Schlafhorst winding and laser-guided sectional warping drum systems creating perfectly tensioned warp beams in Sivagangai.',
+    metric: { value: '1,000 m/min', label: 'Direct Warping Speed' },
+    image: weavingDirectWarpingImg,
+    badgeText: 'LASER-GUIDED'
   },
   {
     label: 'Stitching Detail',

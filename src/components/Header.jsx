@@ -4,9 +4,9 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen, togg
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <a 
-          href="#/home" 
-          className={`logo-wrapper ${currentPage === 'home' ? 'active' : ''}`} 
+        <a
+          href="#/home"
+          className={`logo-wrapper ${currentPage === 'home' ? 'active' : ''}`}
           style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '2px' }}
         >
           <span className="logo-text">Jasmine Towels</span>
@@ -46,7 +46,7 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen, togg
               <ul className="nav-dropdown-menu">
                 <li><a href="#/facilities?tab=spinning">Spinning</a></li>
                 <li><a href="#/facilities?tab=weaving">Weaving</a></li>
-                <li><a href="#/facilities?tab=processing">Wet processing</a></li>
+                <li><a href="#/facilities?tab=wet_processing">Wet processing</a></li>
                 <li><a href="#/facilities?tab=manufacturing">Manufacturing</a></li>
               </ul>
             </li>

@@ -123,7 +123,7 @@ function App() {
           const tab = params.get('tab');
           if (tab === 'spinning') setActiveFacilityIndex(0);
           else if (tab === 'weaving') setActiveFacilityIndex(1);
-          else if (tab === 'processing') setActiveFacilityIndex(2);
+          else if (tab === 'wet_processing') setActiveFacilityIndex(2);
           else if (tab === 'manufacturing') setActiveFacilityIndex(3);
         } else if (path === 'collections' && queryString) {
           const params = new URLSearchParams(queryString);
@@ -176,61 +176,61 @@ function App() {
   return (
     <>
       {/* HEADER SECTION */}
-      <Header 
-        scrolled={scrolled} 
-        currentPage={currentPage} 
-        mobileMenuOpen={mobileMenuOpen} 
-        setMobileMenuOpen={setMobileMenuOpen} 
-        toggleTheme={toggleTheme} 
+      <Header
+        scrolled={scrolled}
+        currentPage={currentPage}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        toggleTheme={toggleTheme}
       />
 
       {/* MOBILE OVERLAY MENU */}
-      <MobileMenu 
-        mobileMenuOpen={mobileMenuOpen} 
-        currentPage={currentPage} 
-        setMobileMenuOpen={setMobileMenuOpen} 
+      <MobileMenu
+        mobileMenuOpen={mobileMenuOpen}
+        currentPage={currentPage}
+        setMobileMenuOpen={setMobileMenuOpen}
       />
 
       {currentPage === 'home' ? (
         <>
           {/* HERO SECTION */}
-          <Hero 
-            heroTab={heroTab} 
-            setHeroTab={setHeroTab} 
-            setCurrentPage={setCurrentPage} 
+          <Hero
+            heroTab={heroTab}
+            setHeroTab={setHeroTab}
+            setCurrentPage={setCurrentPage}
           />
 
           {/* COLLECTIONS COVERFLOW SECTION */}
-          <Collections 
-            activeSuiteIndex={activeSuiteIndex} 
-            setActiveSuiteIndex={setActiveSuiteIndex} 
-            handlePrevSuite={handlePrevSuite} 
-            handleNextSuite={handleNextSuite} 
+          <Collections
+            activeSuiteIndex={activeSuiteIndex}
+            setActiveSuiteIndex={setActiveSuiteIndex}
+            handlePrevSuite={handlePrevSuite}
+            handleNextSuite={handleNextSuite}
             getCoverflowStyle={getCoverflowStyle}
-            setCurrentPage={setCurrentPage} 
+            setCurrentPage={setCurrentPage}
           />
 
           {/* HERITAGE & OVERVIEW SECTION */}
-          <About 
-            setCurrentPage={setCurrentPage} 
+          <About
+            setCurrentPage={setCurrentPage}
           />
 
           {/* OPERATIONS / MANUFACTURING FACILITIES */}
-          <Facilities 
-            activeFacilityIndex={activeFacilityIndex} 
-            setActiveFacilityIndex={setActiveFacilityIndex} 
-            hoveredHotspot={hoveredHotspot} 
-            setHoveredHotspot={setHoveredHotspot} 
-            setCurrentPage={setCurrentPage} 
+          <Facilities
+            activeFacilityIndex={activeFacilityIndex}
+            setActiveFacilityIndex={setActiveFacilityIndex}
+            hoveredHotspot={hoveredHotspot}
+            setHoveredHotspot={setHoveredHotspot}
+            setCurrentPage={setCurrentPage}
           />
 
           {/* QUALITY CONTROL CENTER */}
           <Quality />
 
           {/* RESPONSIBILITY & ESG SECTION */}
-          <ESG 
-            activeEsgIndex={activeEsgIndex} 
-            setActiveEsgIndex={setActiveEsgIndex} 
+          <ESG
+            activeEsgIndex={activeEsgIndex}
+            setActiveEsgIndex={setActiveEsgIndex}
           />
         </>
       ) : currentPage === 'about' ? (
@@ -238,22 +238,22 @@ function App() {
         <AboutPage setCurrentPage={setCurrentPage} />
       ) : currentPage === 'facilities' ? (
         /* DEDICATED FULL-PAGE FACILITIES SECTION */
-        <FacilitiesPage 
-          activeFacilityIndex={activeFacilityIndex} 
-          setActiveFacilityIndex={setActiveFacilityIndex} 
-          hoveredHotspot={hoveredHotspot} 
-          setHoveredHotspot={setHoveredHotspot} 
-          setCurrentPage={setCurrentPage} 
+        <FacilitiesPage
+          activeFacilityIndex={activeFacilityIndex}
+          setActiveFacilityIndex={setActiveFacilityIndex}
+          hoveredHotspot={hoveredHotspot}
+          setHoveredHotspot={setHoveredHotspot}
+          setCurrentPage={setCurrentPage}
         />
       ) : currentPage === 'collections' ? (
         /* DEDICATED FULL-PAGE COLLECTIONS SECTION */
-        <CollectionsPage 
-          activeSuiteIndex={activeSuiteIndex} 
-          setActiveSuiteIndex={setActiveSuiteIndex} 
-          handlePrevSuite={handlePrevSuite} 
-          handleNextSuite={handleNextSuite} 
+        <CollectionsPage
+          activeSuiteIndex={activeSuiteIndex}
+          setActiveSuiteIndex={setActiveSuiteIndex}
+          handlePrevSuite={handlePrevSuite}
+          handleNextSuite={handleNextSuite}
           getCoverflowStyle={getCoverflowStyle}
-          setCurrentPage={setCurrentPage} 
+          setCurrentPage={setCurrentPage}
         />
       ) : currentPage === 'quality' ? (
         /* DEDICATED FULL-PAGE QUALITY SECTION */
