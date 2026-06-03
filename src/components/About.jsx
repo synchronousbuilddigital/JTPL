@@ -6,7 +6,7 @@ const About = ({ setCurrentPage }) => {
     <section id="about" className="section-padding">
       <div className="container">
         <div className="overview-grid">
-          <div className="overview-visual">
+          <div className="overview-visual reveal-on-scroll reveal-left">
             <img
               className="overview-main-img"
               src={kitchenLinenImg}
@@ -20,9 +20,9 @@ const About = ({ setCurrentPage }) => {
             </div>
           </div>
 
-          <div className="overview-content" style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', justifycontent: 'center' }}>
+          <div className="overview-content reveal-on-scroll reveal-right" style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', justifycontent: 'center' }}>
             <span className="badge" style={{ alignSelf: 'flex-start' }}>Reliable B2B Partner</span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 500, color: '#FAF8F5', marginTop: '10px', marginBottom: '24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 500, color: 'var(--text-primary)', marginTop: '10px', marginBottom: '24px' }}>
               About Jasmine
             </h2>
             <p className="text-secondary" style={{ fontSize: '1.05rem', lineHeight: '1.75', marginBottom: '32px' }}>

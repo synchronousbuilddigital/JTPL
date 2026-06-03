@@ -22,7 +22,7 @@ const QualityPage = ({ setCurrentPage }) => {
             <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.22em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
               Quality: We Are Responsible
             </span>
-            <h1 style={{ marginTop: '12px', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: '#FAF8F5', lineHeight: '1.15' }}>
+            <h1 style={{ marginTop: '12px', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: 'var(--accent)', lineHeight: '1.15' }}>
               Quality Policy
             </h1>
             <p className="text-secondary" style={{ fontSize: '1.1rem', lineHeight: '1.75', marginTop: '20px', maxWidth: '640px' }}>

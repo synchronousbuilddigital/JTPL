@@ -13,7 +13,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
         <div className="hero-unique-grid">
 
           {/* LEFT COLUMN: Interactive tab content */}
-          <div className="hero-unique-content">
+          <div className="hero-unique-content reveal-on-scroll reveal-left">
             {/* Step Switcher Tabs */}
             <div className="hero-tab-bar">
               {HERO_TABS.map((tab, idx) => (
@@ -56,21 +56,6 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </a>
-              <a 
-                href="#facilities" 
-                className="hero-link-profile"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCurrentPage('facilities');
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Interactive Tour
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: '6px' }}>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
             </div>
 
             {/* ISO Badges with hover micro-tooltips */}
@@ -100,7 +85,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
           </div>
 
           {/* RIGHT COLUMN: Asymmetric Multi-Layered Kinetic Showcase */}
-          <div className="hero-interactive-showcase-side">
+          <div className="hero-interactive-showcase-side reveal-on-scroll reveal-right delay-200">
             <div className="kinetic-showcase-wrapper">
               {/* Main Focal Frame */}
               <div className="kinetic-capsule main-frame">
@@ -138,7 +123,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
         </div>
 
         {/* Bottom Trust strip */}
-        <div className="hero-bottom-trust-strip">
+        <div className="hero-bottom-trust-strip reveal-on-scroll reveal-up delay-400">
           <div className="trust-strip-item">
             <div className="stat-num">35K+</div>
             <div className="stat-desc">

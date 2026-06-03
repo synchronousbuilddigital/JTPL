@@ -11,11 +11,11 @@ const Facilities = ({
   return (
     <section id="facilities" className="facilities-cards-section section-padding">
       <div className="container">
-        <div className="text-center" style={{ marginBottom: '56px' }}>
+        <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '56px' }}>
           <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.22em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
             Manufacturing Hubs
           </span>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 500, color: '#FAF8F5', marginTop: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 500, color: 'var(--text-primary)', marginTop: '8px' }}>
             Our Facilities
           </h2>
           <p className="text-secondary" style={{ maxWidth: '600px', margin: '12px auto 0', fontSize: '1rem', lineHeight: '1.6' }}>
@@ -27,10 +27,11 @@ const Facilities = ({
         <div className="facilities-cards-grid">
           {FACILITY_STEPS.map((facility, idx) => {
             const tabs = ['spinning', 'weaving', 'wet_processing', 'manufacturing'];
+            const delays = ['delay-100', 'delay-200', 'delay-300', 'delay-400'];
             return (
               <div
                 key={idx}
-                className="facility-interactive-card"
+                className={`facility-interactive-card reveal-on-scroll reveal-up ${delays[idx]}`}
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
                   setActiveFacilityIndex(idx);

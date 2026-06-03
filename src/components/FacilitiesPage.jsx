@@ -461,7 +461,7 @@ const FacilitiesPage = ({
           <span className="badge" style={{ marginBottom: '12px' }}>
             Production Division Showcase
           </span>
-          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#FAF8F5', lineHeight: '1.15', fontWeight: 400 }}>
+          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: 'var(--accent)', lineHeight: '1.15', fontWeight: 400 }}>
             {currentFacility.title}
           </h1>
           <p className="text-secondary" style={{ marginTop: '8px', fontSize: '0.98rem', maxWidth: '600px' }}>
@@ -586,7 +586,7 @@ const FacilitiesPage = ({
         <div style={{ marginTop: '80px', borderTop: '1px solid var(--border-color)', paddingTop: '64px' }}>
           <div className="contact-bottom-cta" style={{ borderRadius: '16px', overflow: 'hidden' }}>
             <div className="contact-bottom-cta-overlay" style={{ padding: '60px 40px' }}>
-              <span className="contact-cta-badge" style={{ background: 'rgba(184, 144, 71, 0.1)', color: 'var(--accent)', border: '1px solid rgba(184,144,71,0.3)', padding: '6px 16px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '0.72rem', fontWeight: 700, display: 'inline-block', marginBottom: '16px' }}>
+              <span className="contact-cta-badge" style={{ background: 'rgba(239, 131, 84, 0.1)', color: 'var(--accent)', border: '1px solid rgba(239, 131, 84, 0.3)', padding: '6px 16px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '0.72rem', fontWeight: 700, display: 'inline-block', marginBottom: '16px' }}>
                 Operations Audit
               </span>
               <h2 className="contact-cta-heading" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#FAF8F5', fontFamily: 'var(--font-serif)', marginBottom: '24px', lineHeight: '1.25' }}>

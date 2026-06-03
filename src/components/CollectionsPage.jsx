@@ -344,7 +344,7 @@ const CollectionsPage = ({
             <span className="badge" style={{ marginBottom: '12px' }}>
               {detailData.badge}
             </span>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#FAF8F5', lineHeight: '1.15', fontWeight: 400 }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: 'var(--accent)', lineHeight: '1.15', fontWeight: 400 }}>
               {detailData.title}
             </h1>
             <p className="text-secondary" style={{ marginTop: '8px', fontSize: '0.98rem', maxWidth: '600px' }}>
@@ -492,7 +492,7 @@ const CollectionsPage = ({
           <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.22em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
             Product Range Room
           </span>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: '#FAF8F5', marginTop: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: 'var(--accent)', marginTop: '8px' }}>
             Our collections
           </h2>
           <p className="text-secondary" style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '12px auto 0', lineHeight: '1.6' }}>

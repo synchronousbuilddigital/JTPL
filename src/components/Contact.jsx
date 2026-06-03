@@ -121,7 +121,7 @@ const Contact = ({ setCurrentPage }) => {
                 src="https://maps.google.com/maps?q=Jasmine%20Towels%20Pvt.%20Ltd.,%20Arruppukottai%20Road,%20Perungudi,%20Madurai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="220" 
-                style={{ border: 0, borderRadius: '12px', filter: 'grayscale(0.8) invert(0.9) contrast(1.2)' }} 
+                style={{ border: 0, borderRadius: '12px', filter: 'grayscale(1) contrast(1.15) brightness(1.1)' }} 
                 allowFullScreen="" 
                 loading="lazy"
               ></iframe>

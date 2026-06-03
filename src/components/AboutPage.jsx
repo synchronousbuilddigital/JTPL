@@ -18,7 +18,7 @@ const AboutPage = ({ setCurrentPage }) => {
             <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.25em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
               Corporate Heritage & Philosophy
             </span>
-            <h1 style={{ marginTop: '12px', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: '#FAF8F5', lineHeight: '1.15' }}>
+            <h1 style={{ marginTop: '12px', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', color: 'var(--accent)', lineHeight: '1.15' }}>
               About JTPL
             </h1>
             <p className="text-secondary" style={{ fontSize: '1.1rem', lineHeight: '1.75', marginTop: '20px', maxWidth: '640px' }}>
@@ -41,14 +41,14 @@ const AboutPage = ({ setCurrentPage }) => {
           </div>
           <div className="about-heritage-content">
             <span className="badge" style={{ marginBottom: '12px' }}>Established Lineage</span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#FAF8F5', marginBottom: '24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--text-primary)', marginBottom: '24px' }}>
               Our Journey Timeline
             </h2>
             <div className="about-history-timeline">
               <div className="history-timeline-item" style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
                 <span className="history-timeline-year" style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontWeight: 600, fontSize: '1.2rem', minWidth: '60px' }}>1979</span>
                 <div>
-                  <h4 style={{ color: '#FAF8F5', fontSize: '1rem', margin: '0 0 4px 0' }}>Parent Company Foundation</h4>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '1rem', margin: '0 0 4px 0' }}>Parent Company Foundation</h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.5', margin: 0 }}>
                     Our parent company Enkay Enterprises was founded, building a highly respected trading legacy and foundation in premium cotton textiles.
                   </p>
@@ -57,7 +57,7 @@ const AboutPage = ({ setCurrentPage }) => {
               <div className="history-timeline-item" style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
                 <span className="history-timeline-year" style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontWeight: 600, fontSize: '1.2rem', minWidth: '60px' }}>1994</span>
                 <div>
-                  <h4 style={{ color: '#FAF8F5', fontSize: '1rem', margin: '0 0 4px 0' }}>Establishment of Jasmine Towels</h4>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '1rem', margin: '0 0 4px 0' }}>Establishment of Jasmine Towels</h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.5', margin: 0 }}>
                     The company launched operations at Madurai to spin and weave customized luxury fabrics, targeting international export quality.
                   </p>
@@ -66,7 +66,7 @@ const AboutPage = ({ setCurrentPage }) => {
               <div className="history-timeline-item" style={{ display: 'flex', gap: '16px' }}>
                 <span className="history-timeline-year" style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontWeight: 600, fontSize: '1.2rem', minWidth: '60px' }}>1998</span>
                 <div>
-                  <h4 style={{ color: '#FAF8F5', fontSize: '1rem', margin: '0 0 4px 0' }}>Legacy Vision Expansion</h4>
+                  <h4 style={{ color: 'var(--text-primary)', fontSize: '1rem', margin: '0 0 4px 0' }}>Legacy Vision Expansion</h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.5', margin: 0 }}>
                     Expanded by Mr. Nayan Mulji Thakker to invest in high-capacity vertical air-jet loom factories and direct B2B buyer custom programs.
                   </p>
@@ -78,15 +78,15 @@ const AboutPage = ({ setCurrentPage }) => {
 
         {/* Section 3: Core Mandates & Values */}
         <div style={{ marginTop: '80px' }}>
-          <div className="text-center" style={{ marginBottom: '40px' }}>
+          <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '40px' }}>
             <span className="badge">Corporate Philosophy</span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#FAF8F5', marginTop: '8px' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--text-primary)', marginTop: '8px' }}>
               Mission & Vision
             </h2>
           </div>
           <div className="about-values-grid">
             {/* Mission */}
-            <div className="about-val-box">
+            <div className="about-val-box reveal-on-scroll reveal-left delay-100">
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontSize: '1.3rem', margin: '0 0 20px' }}>
                 Our Mission
               </h3>
@@ -119,7 +119,7 @@ const AboutPage = ({ setCurrentPage }) => {
             </div>
 
             {/* Vision */}
-            <div className="about-val-box">
+            <div className="about-val-box reveal-on-scroll reveal-right delay-200">
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontSize: '1.3rem', margin: '0 0 20px' }}>
                 Our Vision
               </h3>

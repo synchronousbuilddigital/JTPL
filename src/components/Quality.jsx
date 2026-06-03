@@ -5,11 +5,11 @@ const Quality = () => {
     <section id="quality" className="quality-redesign-section section-padding">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center" style={{ marginBottom: '56px' }}>
+        <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '56px' }}>
           <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.22em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
             Uncompromising Standards
           </span>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 3.8vw, 2.8rem)', fontWeight: 500, color: '#FAF8F5', marginTop: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 3.8vw, 2.8rem)', fontWeight: 500, color: 'var(--text-primary)', marginTop: '8px' }}>
             Quality Control Center
           </h2>
         </div>
@@ -18,7 +18,7 @@ const Quality = () => {
         <div className="quality-grid-3col">
           
           {/* Card 1: Compliance */}
-          <div className="quality-card-ref">
+          <div className="quality-card-ref reveal-on-scroll reveal-up delay-100">
             <div className="quality-card-top">
               <span className="quality-card-num">01</span>
               <div className="quality-card-icon">
@@ -42,7 +42,7 @@ const Quality = () => {
           </div>
 
           {/* Card 2: Commitment */}
-          <div className="quality-card-ref">
+          <div className="quality-card-ref reveal-on-scroll reveal-up delay-200">
             <div className="quality-card-top">
               <span className="quality-card-num">02</span>
               <div className="quality-card-icon">
@@ -66,7 +66,7 @@ const Quality = () => {
           </div>
 
           {/* Card 3: Continuous Improvement */}
-          <div className="quality-card-ref">
+          <div className="quality-card-ref reveal-on-scroll reveal-up delay-300">
             <div className="quality-card-top">
               <span className="quality-card-num">03</span>
               <div className="quality-card-icon">

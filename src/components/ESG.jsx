@@ -5,7 +5,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
   return (
     <section id="responsibility" className="section-padding" style={{ borderBottom: '1px solid var(--border-color)', transition: 'background-color var(--transition)' }}>
       <div className="container">
-        <div className="text-center" style={{ marginBottom: '64px' }}>
+        <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '64px' }}>
           <span className="badge">Ethical & Green Commitment</span>
           <h2>We are responsible</h2>
           <p className="text-secondary" style={{ maxWidth: '650px', margin: '16px auto 0' }}>
@@ -13,7 +13,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
           </p>
         </div>
 
-        <div className="esg-dashboard-container">
+        <div className="esg-dashboard-container reveal-on-scroll reveal-up delay-150">
           {/* Left 3 Pills */}
           <div className="esg-pills-col left-pills">
             {ESG_INITIATIVES.slice(0, 3).map((item, idx) => (
@@ -66,7 +66,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
         </div>
 
         {/* Active Detail Showcase Panel */}
-        <div className="esg-detail-panel">
+        <div className="esg-detail-panel reveal-on-scroll reveal-up delay-300">
           <div className="esg-detail-content">
             <div className="esg-detail-meta">
               <span className="badge-meta">INITIATIVE 0{activeEsgIndex + 1}</span>

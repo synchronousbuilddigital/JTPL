@@ -10,19 +10,19 @@ const Collections = ({
   setCurrentPage
 }) => {
   return (
-    <section id="suites" className="section-padding bg-secondary" style={{ borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
+    <section id="suites" className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
       <div className="container" style={{ position: 'relative' }}>
-        <div className="text-center" style={{ marginBottom: '32px' }}>
+        <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '32px' }}>
           <span className="badge" style={{ color: 'var(--accent)', letterSpacing: '0.22em', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 700 }}>
             Product Range
           </span>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 500, color: '#FAF8F5', marginTop: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', fontWeight: 500, color: 'var(--text-primary)', marginTop: '8px' }}>
             Our collections
           </h2>
         </div>
 
         {/* 3D Coverflow Container */}
-        <div className="coverflow-container">
+        <div className="coverflow-container reveal-on-scroll reveal-scale delay-200">
           {/* Nav Arrows */}
           <button className="coverflow-nav-btn prev" onClick={handlePrevSuite} aria-label="Previous Slide">
             &larr;

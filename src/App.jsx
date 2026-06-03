@@ -25,7 +25,7 @@ import QualityPage from './components/QualityPage';
 function App() {
   // Theme state
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark'; // Defaulting to dark theme
+    return localStorage.getItem('theme') || 'light'; // Defaulting to light theme
   });
 
   // UI state
@@ -168,6 +168,32 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Scroll reveal animation observer
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      const targets = document.querySelectorAll('.reveal-on-scroll');
+      targets.forEach((el) => observer.observe(el));
+
+      return () => {
+        targets.forEach((el) => observer.unobserve(el));
+      };
+    }, 200);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentPage]);
+
 
   const toggleTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));

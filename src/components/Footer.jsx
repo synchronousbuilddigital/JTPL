@@ -6,7 +6,7 @@ const Footer = ({ setCurrentPage }) => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <span className="logo-text" style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', color: '#FAF8F5', fontWeight: 500 }}>Jasmine Towels</span>
+            <span className="logo-text" style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', fontWeight: 500 }}>Jasmine Towels</span>
             <span className="logo-accent" style={{ display: 'block', marginTop: '4px' }}>PVT. LTD. • EST. MADURAI</span>
             <p className="text-secondary" style={{ fontSize: '0.88rem', lineHeight: '1.6', margin: '16px 0 24px', maxWidth: '300px' }}>
               Leading manufacturer and global exporter of GOTS-certified organic terry towels, home furnishings, and specialized B2B textiles.
