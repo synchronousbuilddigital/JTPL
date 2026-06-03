@@ -21,6 +21,7 @@ import AboutPage from './components/AboutPage';
 import FacilitiesPage from './components/FacilitiesPage';
 import CollectionsPage from './components/CollectionsPage';
 import QualityPage from './components/QualityPage';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   // Theme state locked to light mode
@@ -197,6 +198,7 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
       {/* HEADER SECTION */}
       <Header
         scrolled={scrolled}

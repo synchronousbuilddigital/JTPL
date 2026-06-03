@@ -361,3 +361,27 @@
 [data-theme="light"] .collection-spec-val {
   color: var(--text-primary);
 }
+
+/* Multi-image Showcase Layout */
+.collection-multi-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  height: 380px;
+}
+
+.collection-small-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .collection-multi-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 200px;
+    height: auto;
+  }
+}

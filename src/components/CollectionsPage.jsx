@@ -9,6 +9,11 @@ import salonTowelsCat from '../assets/salon_towels_cat.png';
 import safetyWearCat from '../assets/safety_wear_cat.png';
 import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
 import bathBlanketsCat from '../assets/bath_blankets_cat.png';
+import bathBlanketMain from '../assets/bath_blanket_main.png';
+import bathBlanketPink from '../assets/bath_blanket_pink.png';
+import bathBlanketOrange from '../assets/bath_blanket_orange.png';
+import bathBlanketCoral from '../assets/bath_blanket_coral.png';
+import bathBlanketWhite from '../assets/bath_blanket_white.png';
 
 import './CollectionsPage.css';
 
@@ -81,7 +86,13 @@ const CollectionsPage = ({
               title: 'Heavy-Napped Flannel Wraps',
               tag: 'CLINICAL // WRAPS',
               desc: 'Double-sided heavy flannel sheets designed for post-operative patient care. Retains body heat rapidly while maintaining a soft, non-abrasive touch against sensitive skin, standing up to intensive hospital laundry sanitization.',
-              image: bathBlanketsCat,
+              images: {
+                main: bathBlanketMain,
+                pink: bathBlanketPink,
+                orange: bathBlanketOrange,
+                coral: bathBlanketCoral,
+                white: bathBlanketWhite
+              },
               specs: {
                 'Fiber Blend': '80% Organic Cotton / 20% Polyester',
                 'Napping Style': 'Double-sided high-density brushed nap',
@@ -359,25 +370,65 @@ const CollectionsPage = ({
                 
                 {/* Image Pane Container */}
                 <div className="collection-img-pane">
-                  <div className="collection-img-frame">
-                    <div className="collection-camera-grid"></div>
-                    <div className="collection-img-overlay" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span className="collection-rec-dot"></span>
-                      CATALOG // {prod.tag}
+                  {prod.images ? (
+                    <div className="collection-multi-grid">
+                      {/* Left main image */}
+                      <div className="collection-img-frame" style={{ height: '100%' }}>
+                        <div className="collection-camera-grid"></div>
+                        <div className="collection-img-overlay" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span className="collection-rec-dot"></span>
+                          CATALOG // {prod.tag}
+                        </div>
+                        <img 
+                          className="collection-img"
+                          src={prod.images.main} 
+                          alt={prod.title} 
+                        />
+                        <div className="collection-img-coordinates">
+                          <span>COORDS: {detailData.coordinates}</span>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <span className="collection-rec-dot" style={{ backgroundColor: '#22c55e', animation: 'collectionRecPulse 2s infinite' }}></span>
+                            VERIFIED // OK
+                          </span>
+                        </div>
+                      </div>
+                      {/* Right 2x2 grid of small images */}
+                      <div className="collection-small-grid">
+                        <div className="collection-img-frame" style={{ height: '100%' }}>
+                          <img className="collection-img" src={prod.images.pink} alt="Pink variety" />
+                        </div>
+                        <div className="collection-img-frame" style={{ height: '100%' }}>
+                          <img className="collection-img" src={prod.images.orange} alt="Orange variety" />
+                        </div>
+                        <div className="collection-img-frame" style={{ height: '100%' }}>
+                          <img className="collection-img" src={prod.images.coral} alt="Coral variety" />
+                        </div>
+                        <div className="collection-img-frame" style={{ height: '100%' }}>
+                          <img className="collection-img" src={prod.images.white} alt="White variety" />
+                        </div>
+                      </div>
                     </div>
-                    <img 
-                      className="collection-img"
-                      src={prod.image} 
-                      alt={prod.title} 
-                    />
-                    <div className="collection-img-coordinates">
-                      <span>COORDS: {detailData.coordinates}</span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span className="collection-rec-dot" style={{ backgroundColor: '#22c55e', animation: 'collectionRecPulse 2s infinite' }}></span>
-                        VERIFIED // OK
-                      </span>
+                  ) : (
+                    <div className="collection-img-frame">
+                      <div className="collection-camera-grid"></div>
+                      <div className="collection-img-overlay" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="collection-rec-dot"></span>
+                        CATALOG // {prod.tag}
+                      </div>
+                      <img 
+                        className="collection-img"
+                        src={prod.image} 
+                        alt={prod.title} 
+                      />
+                      <div className="collection-img-coordinates">
+                        <span>COORDS: {detailData.coordinates}</span>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span className="collection-rec-dot" style={{ backgroundColor: '#22c55e', animation: 'collectionRecPulse 2s infinite' }}></span>
+                          VERIFIED // OK
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Info & Telemetry Pane */}
@@ -453,7 +504,7 @@ const CollectionsPage = ({
           </div>
 
           {/* Action CTAs */}
-          <div style={{ marginTop: '80px', borderTop: '1px solid var(--border-color)', paddingTop: '48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ marginTop: '80px', borderTop: '1px solid var(--border-color)', paddingTop: '48px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
             <button 
               className="hero-company-profile-link" 
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
@@ -462,15 +513,6 @@ const CollectionsPage = ({
               }}
             >
               &larr; Return to Collections Portal
-            </button>
-            <button 
-              className="btn btn-primary"
-              onClick={() => {
-                setCurrentPage('contact');
-                window.scrollTo(0, 0);
-              }}
-            >
-              Request B2B Quotation
             </button>
           </div>
 
