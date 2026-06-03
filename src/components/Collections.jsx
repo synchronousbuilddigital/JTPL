@@ -23,14 +23,6 @@ const Collections = ({
 
         {/* 3D Coverflow Container */}
         <div className="coverflow-container reveal-on-scroll reveal-scale delay-200">
-          {/* Nav Arrows */}
-          <button className="coverflow-nav-btn prev" onClick={handlePrevSuite} aria-label="Previous Slide">
-            &larr;
-          </button>
-          <button className="coverflow-nav-btn next" onClick={handleNextSuite} aria-label="Next Slide">
-            &rarr;
-          </button>
-
           <div className="coverflow-wrapper">
             {COLLECTIONS_DATA.map((item, index) => {
               const isActive = index === activeSuiteIndex;
@@ -49,7 +41,15 @@ const Collections = ({
                     }
                   }}
                 >
-                  <div className="coverflow-card-bg" style={{ backgroundImage: `url(${item.image})` }}></div>
+                  <div 
+                    className="coverflow-card-bg" 
+                    style={{ 
+                      backgroundImage: `url(${item.image})`,
+                      backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
+                      backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  ></div>
                   <div className="coverflow-card-overlay"></div>
                   <div className="coverflow-info">
                     <h3>{item.title}</h3>
@@ -66,16 +66,65 @@ const Collections = ({
           </div>
         </div>
 
-        {/* Pagination dots */}
-        <div className="coverflow-dots">
-          {COLLECTIONS_DATA.map((_, index) => (
-            <button
-              key={index}
-              className={`coverflow-dot ${index === activeSuiteIndex ? 'active' : ''}`}
-              onClick={() => setActiveSuiteIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            ></button>
-          ))}
+        {/* Controls Bar with Navigation and Pagination */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '40px' }} className="coverflow-controls-bar">
+          <button 
+            onClick={handlePrevSuite} 
+            aria-label="Previous Slide"
+            style={{
+              background: 'rgba(26, 25, 23, 0.45)',
+              border: '1px solid rgba(250, 248, 245, 0.08)',
+              color: '#FAF8F5',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(8px)',
+              padding: 0
+            }}
+            className="coverflow-bottom-nav-btn"
+          >
+            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&larr;</span>
+          </button>
+
+          {/* Pagination dots */}
+          <div className="coverflow-dots" style={{ margin: 0 }}>
+            {COLLECTIONS_DATA.map((_, index) => (
+              <button
+                key={index}
+                className={`coverflow-dot ${index === activeSuiteIndex ? 'active' : ''}`}
+                onClick={() => setActiveSuiteIndex(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+
+          <button 
+            onClick={handleNextSuite} 
+            aria-label="Next Slide"
+            style={{
+              background: 'rgba(26, 25, 23, 0.45)',
+              border: '1px solid rgba(250, 248, 245, 0.08)',
+              color: '#FAF8F5',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(8px)',
+              padding: 0
+            }}
+            className="coverflow-bottom-nav-btn"
+          >
+            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&rarr;</span>
+          </button>
         </div>
 
       </div>

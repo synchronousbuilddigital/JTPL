@@ -125,10 +125,10 @@
 .collection-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform var(--transition);
-  filter: brightness(0.85) contrast(1.02);
+  filter: brightness(0.95) contrast(1.05);
 }
 
 .collection-img-pane:hover .collection-img {

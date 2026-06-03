@@ -33,7 +33,7 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen }) =>
                 <li><a href="#/collections?tab=salon_towels">Salon towels</a></li>
                 <li><a href="#/collections?tab=thermal">Thermal</a></li>
                 <li><a href="#/collections?tab=towels">Towels</a></li>
-                <li><a href="#/collections?tab=overview">Overview</a></li>
+
               </ul>
             </li>
             <li className="nav-dropdown-wrapper">

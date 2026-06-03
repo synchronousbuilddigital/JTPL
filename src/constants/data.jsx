@@ -2,6 +2,7 @@ import React from 'react';
 
 // Import newly generated photographic assets
 import heroTowelsImg from '../assets/hero_towels.png';
+import nSeriesMain from '../assets/n_series_main.png';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
@@ -18,11 +19,12 @@ import weavingDirectWarpingImg from '../assets/weaving_direct_warping_actual.png
 
 // B2B Collections Coverflow Database
 export const COLLECTIONS_DATA = [
-  { title: 'Terry Towels', subtitle: 'R • P • N Series', image: heroTowelsImg, desc: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders for global B2B clients.' },
+  { title: 'N-Series Towels', subtitle: 'Institutional range', image: nSeriesMain, desc: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders for global hospitality clients.' },
+  { title: 'P-Series Towels', subtitle: 'Premium retail range', image: heroTowelsImg, desc: 'Combed ring-spun towels with low-profile dobby borders designed for high-end retail brands.' },
   { title: 'Duvet Covers', subtitle: 'Bedroom linen', image: duvetCoversCat, desc: 'Fine-weave cotton sateen duvet casings featuring elegant invisible zippers and secure tie-downs.' },
   { title: 'Kitchen Linen', subtitle: 'Pot holders & more', image: kitchenLinenImg, desc: 'Lint-free waffle weave tea towels, heavy-duty oven mitts, and double-layered chef aprons.' },
   { title: 'Salon Towels', subtitle: 'Professional grade', image: salonTowelsCat, desc: 'Vats-dyed salon and barbershop linens, chemically resistant to peroxides and hair bleach.' },
-  { title: 'Safety Wear', subtitle: 'PPE kits', image: safetyWearCat, desc: 'Rugged, flame-retardant industrial aprons and certified high-visibility utility coveralls.' },
+  { title: 'Safety Wear', subtitle: 'PPE kits', image: safetyWearCat, desc: 'High-barrier disposable isolation gowns and certified medical-grade protective face masks.' },
   { title: 'Thermal Wear', subtitle: 'Leno Cellular Weave', image: thermalBlanketsCat, desc: 'Classic cellular blankets constructed in breathable leno structures, providing temperature self-regulation.' },
   { title: 'Bath Blankets', subtitle: 'Comfort range', image: bathBlanketsCat, desc: 'Heavily napped hospital flannel wraps designed to provide instant patient warmth and maximum comfort.' }
 ];

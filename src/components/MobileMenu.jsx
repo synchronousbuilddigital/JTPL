@@ -31,7 +31,7 @@ const MobileMenu = ({ mobileMenuOpen, currentPage, setMobileMenuOpen }) => {
             <li><a href="#/collections?tab=salon_towels" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Salon towels</a></li>
             <li><a href="#/collections?tab=thermal" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Thermal</a></li>
             <li><a href="#/collections?tab=towels" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Towels</a></li>
-            <li><a href="#/collections?tab=overview" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Overview</a></li>
+
           </ul>
         </li>
         <li>

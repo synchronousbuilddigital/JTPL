@@ -7,6 +7,9 @@ import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
 import salonTowelsCat from '../assets/salon_towels_cat.png';
 import safetyWearCat from '../assets/safety_wear_cat.png';
+import safetyPpeGown from '../assets/safety_ppe_gown.png';
+import safetyMaskBlue from '../assets/safety_mask_blue.png';
+import safetyMaskWhite from '../assets/safety_mask_white.png';
 import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
 import bathBlanketsCat from '../assets/bath_blankets_cat.png';
 import bathBlanketMain from '../assets/bath_blanket_main.png';
@@ -226,20 +229,54 @@ const CollectionsPage = ({
           coordinates: '9.9254° N, 78.1402° E',
           subProducts: [
             {
-              id: 'fr_aprons',
-              title: 'Flame-Retardant Heavy Aprons',
-              tag: 'SAFETY // FR CANVAS',
-              desc: 'Industrial aprons for welders and foundry workers, treated for heat and spark protection, with heavy metal rivets at stress points.',
-              image: safetyWearCat,
+              id: 'ppe_gowns',
+              title: 'Disposable Protective PPE Suit/Gown',
+              tag: 'SAFETY // PPE SUIT',
+              desc: 'High-barrier disposable isolation gowns designed for clinical and sanitary environments, offering fluid resistance and full coverage protection.',
+              image: safetyPpeGown,
               specs: {
-                'Fabric Weight': '14oz Heavy Cotton Canvas',
-                'Treatment': 'Flame-retardant chemical coating',
-                'Seams': 'Kevlar heat-resistant sewing',
-                'Standards': 'ISO 11612 Flame Retardant Certified'
+                'Material': 'Non-woven SMS Polypropylene',
+                'Treatment': 'Anti-static and fluid repellent',
+                'Design': 'Elastic cuffs with tie-back collar',
+                'Certification': 'AAMI Level 3 Protection Compliant'
               },
               metrics: [
-                { label: 'Spark Deflection', value: '98%' },
-                { label: 'Tensile Strength', value: '99%' }
+                { label: 'Fluid Barrier Rating', value: '100%' },
+                { label: 'Tear Resistance', value: '98%' }
+              ]
+            },
+            {
+              id: 'surgical_masks_blue',
+              title: '3-Ply Surgical Face Mask (Blue)',
+              tag: 'PROTECTION // SURGICAL',
+              desc: 'Medical-grade 3-ply filtration masks featuring high fluid resistance and comfortable ear loops for everyday protection.',
+              image: safetyMaskBlue,
+              specs: {
+                'Filtration Efficiency': 'BFE ≥ 98% (Surgical Standard)',
+                'Inner Layer': 'Soft skin-friendly fabric',
+                'Nose Clip': 'Malleable aluminum nose bridge',
+                'Sterility': 'Non-sterile cleanroom packed'
+              },
+              metrics: [
+                { label: 'Bacterial Filtration', value: '99%' },
+                { label: 'Breathability Differential', value: 'Grade 1' }
+              ]
+            },
+            {
+              id: 'n95_masks_white',
+              title: 'N95 Protective Face Mask (White)',
+              tag: 'FILTRATION // N95',
+              desc: 'High-efficiency particulate respirator masks providing secure seal fitting and low breathing resistance.',
+              image: safetyMaskWhite,
+              specs: {
+                'Filtration Standard': 'N95 / FFP2 Certified',
+                'Filter Medium': 'Electrostatic melt-blown microfiber',
+                'Strap Style': 'Dual headband loops',
+                'Aerosol Resistance': 'Non-oil based particulates'
+              },
+              metrics: [
+                { label: 'Particulate Filtration', value: '95%' },
+                { label: 'Fit Test Pass Rate', value: '100%' }
               ]
             }
           ]
@@ -544,14 +581,6 @@ const CollectionsPage = ({
 
         {/* 3D Coverflow Carousel Container */}
         <div className="coverflow-container" style={{ margin: '60px 0' }}>
-          {/* Nav Arrows */}
-          <button className="coverflow-nav-btn prev" onClick={handlePrevSuite} aria-label="Previous Slide">
-            &larr;
-          </button>
-          <button className="coverflow-nav-btn next" onClick={handleNextSuite} aria-label="Next Slide">
-            &rarr;
-          </button>
-
           <div className="coverflow-wrapper">
             {COLLECTIONS_DATA.map((item, index) => {
               const isActive = index === activeSuiteIndex;
@@ -568,7 +597,15 @@ const CollectionsPage = ({
                     }
                   }}
                 >
-                  <div className="coverflow-card-bg" style={{ backgroundImage: `url(${item.image})` }}></div>
+                  <div 
+                    className="coverflow-card-bg" 
+                    style={{ 
+                      backgroundImage: `url(${item.image})`,
+                      backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
+                      backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  ></div>
                   <div className="coverflow-card-overlay"></div>
                   <div className="coverflow-info">
                     <h3>{item.title}</h3>
@@ -585,16 +622,65 @@ const CollectionsPage = ({
           </div>
         </div>
 
-        {/* Pagination dots */}
-        <div className="coverflow-dots">
-          {COLLECTIONS_DATA.map((_, index) => (
-            <button
-              key={index}
-              className={`coverflow-dot ${index === activeSuiteIndex ? 'active' : ''}`}
-              onClick={() => setActiveSuiteIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            ></button>
-          ))}
+        {/* Controls Bar with Navigation and Pagination */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '40px' }} className="coverflow-controls-bar">
+          <button 
+            onClick={handlePrevSuite} 
+            aria-label="Previous Slide"
+            style={{
+              background: 'rgba(26, 25, 23, 0.45)',
+              border: '1px solid rgba(250, 248, 245, 0.08)',
+              color: '#FAF8F5',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(8px)',
+              padding: 0
+            }}
+            className="coverflow-bottom-nav-btn"
+          >
+            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&larr;</span>
+          </button>
+
+          {/* Pagination dots */}
+          <div className="coverflow-dots" style={{ margin: 0 }}>
+            {COLLECTIONS_DATA.map((_, index) => (
+              <button
+                key={index}
+                className={`coverflow-dot ${index === activeSuiteIndex ? 'active' : ''}`}
+                onClick={() => setActiveSuiteIndex(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+
+          <button 
+            onClick={handleNextSuite} 
+            aria-label="Next Slide"
+            style={{
+              background: 'rgba(26, 25, 23, 0.45)',
+              border: '1px solid rgba(250, 248, 245, 0.08)',
+              color: '#FAF8F5',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(8px)',
+              padding: 0
+            }}
+            className="coverflow-bottom-nav-btn"
+          >
+            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&rarr;</span>
+          </button>
         </div>
 
         {/* Back to Home CTA */}

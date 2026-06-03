@@ -68,7 +68,7 @@ function App() {
     const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
     // Scale down translation for smaller screens
-    const baseTranslate = isMobile ? 70 : (isTablet ? 120 : 180);
+    const baseTranslate = isMobile ? 70 : (isTablet ? 120 : 210);
 
     let rotateY = 0;
     let translateX = 0;
@@ -82,13 +82,13 @@ function App() {
       translateX = -baseTranslate * absDiff;
       translateZ = -120 * absDiff;
       scale = isMobile ? 0.8 : 0.85;
-      opacity = absDiff === 3 ? 0 : (isMobile ? (absDiff === 1 ? 0.45 : 0) : (absDiff === 1 ? 0.75 : 0.35));
+      opacity = absDiff >= 3 ? 0 : (isMobile ? (absDiff === 1 ? 0.45 : 0) : (absDiff === 1 ? 0.75 : 0.35));
     } else if (diff > 0) {
       rotateY = isMobile ? -12 : -25;
       translateX = baseTranslate * absDiff;
       translateZ = -120 * absDiff;
       scale = isMobile ? 0.8 : 0.85;
-      opacity = absDiff === 3 ? 0 : (isMobile ? (absDiff === 1 ? 0.45 : 0) : (absDiff === 1 ? 0.75 : 0.35));
+      opacity = absDiff >= 3 ? 0 : (isMobile ? (absDiff === 1 ? 0.45 : 0) : (absDiff === 1 ? 0.75 : 0.35));
     } else {
       rotateY = 0;
       translateX = 0;
@@ -127,14 +127,14 @@ function App() {
         } else if (path === 'collections' && queryString) {
           const params = new URLSearchParams(queryString);
           const tab = params.get('tab');
-          if (tab === 'bath_blankets') setActiveSuiteIndex(6);
-          else if (tab === 'duvet_covers') setActiveSuiteIndex(1);
-          else if (tab === 'kitchen_linen') setActiveSuiteIndex(2);
+          if (tab === 'bath_blankets') setActiveSuiteIndex(7);
+          else if (tab === 'duvet_covers') setActiveSuiteIndex(2);
+          else if (tab === 'kitchen_linen') setActiveSuiteIndex(3);
           else if (tab === 'n_series') setActiveSuiteIndex(0);
-          else if (tab === 'p_series') setActiveSuiteIndex(0);
-          else if (tab === 'safety_wear') setActiveSuiteIndex(4);
-          else if (tab === 'salon_towels') setActiveSuiteIndex(3);
-          else if (tab === 'thermal') setActiveSuiteIndex(5);
+          else if (tab === 'p_series') setActiveSuiteIndex(1);
+          else if (tab === 'safety_wear') setActiveSuiteIndex(5);
+          else if (tab === 'salon_towels') setActiveSuiteIndex(4);
+          else if (tab === 'thermal') setActiveSuiteIndex(6);
           else if (tab === 'towels') setActiveSuiteIndex(0);
           else if (tab === 'overview') setActiveSuiteIndex(0);
         }
@@ -223,6 +223,11 @@ function App() {
             setCurrentPage={setCurrentPage}
           />
 
+          {/* HERITAGE & OVERVIEW SECTION */}
+          <About
+            setCurrentPage={setCurrentPage}
+          />
+
           {/* COLLECTIONS COVERFLOW SECTION */}
           <Collections
             activeSuiteIndex={activeSuiteIndex}
@@ -230,11 +235,6 @@ function App() {
             handlePrevSuite={handlePrevSuite}
             handleNextSuite={handleNextSuite}
             getCoverflowStyle={getCoverflowStyle}
-            setCurrentPage={setCurrentPage}
-          />
-
-          {/* HERITAGE & OVERVIEW SECTION */}
-          <About
             setCurrentPage={setCurrentPage}
           />
 

@@ -1423,6 +1423,7 @@ p {
   font-size: 0.85rem;
 }
 
+
 /* Products Section */
 .products-filter {
   display: flex;
@@ -3382,9 +3383,9 @@ p {
 .coverflow-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 480px;
-  margin: 20px auto 0;
+  max-width: 1400px;
+  height: 530px;
+  margin: 60px auto 40px;
   perspective: 1500px;
   overflow: visible;
   display: flex;
@@ -3404,8 +3405,10 @@ p {
 
 .coverflow-card {
   position: absolute;
-  width: 290px;
-  height: 390px;
+  left: calc(50% - 165px);
+  top: calc(50% - 220px);
+  width: 330px;
+  height: 440px;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--border-color);
@@ -3523,11 +3526,14 @@ p {
 @media (max-width: 768px) {
   .coverflow-container {
     height: 420px;
+    margin: 40px auto 20px;
   }
 
   .coverflow-card {
     width: 240px;
     height: 320px;
+    left: calc(50% - 120px);
+    top: calc(50% - 160px);
   }
 
   .coverflow-nav-btn {
