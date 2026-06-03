@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen, toggleTheme }) => {
+const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen }) => {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
@@ -56,16 +56,6 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen, togg
         </nav>
 
         <div className="nav-actions">
-          <button
-            className="nav-three-dots-btn"
-            onClick={toggleTheme}
-            aria-label="Toggle light/dark theme or options"
-          >
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </button>
-
           {/* Mobile Menu Toggle Button */}
           <div
             className={`nav-hamburger ${mobileMenuOpen ? 'active' : ''}`}

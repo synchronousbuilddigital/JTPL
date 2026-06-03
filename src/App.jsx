@@ -23,10 +23,8 @@ import CollectionsPage from './components/CollectionsPage';
 import QualityPage from './components/QualityPage';
 
 function App() {
-  // Theme state
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light'; // Defaulting to light theme
-  });
+  // Theme state locked to light mode
+  const theme = 'light';
 
   // UI state
   const [scrolled, setScrolled] = useState(false);
@@ -152,9 +150,9 @@ function App() {
 
   // Sync theme with DOM
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }, []);
 
   // Handle header changes on scroll
   useEffect(() => {
@@ -195,9 +193,7 @@ function App() {
   }, [currentPage]);
 
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  };
+
 
   return (
     <>
@@ -207,7 +203,6 @@ function App() {
         currentPage={currentPage}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
-        toggleTheme={toggleTheme}
       />
 
       {/* MOBILE OVERLAY MENU */}
