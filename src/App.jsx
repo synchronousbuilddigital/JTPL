@@ -21,6 +21,7 @@ import AboutPage from './components/AboutPage';
 import FacilitiesPage from './components/FacilitiesPage';
 import CollectionsPage from './components/CollectionsPage';
 import QualityPage from './components/QualityPage';
+import ResponsibilityPage from './components/ResponsibilityPage';
 import CustomCursor from './components/CustomCursor';
 
 function App() {
@@ -114,7 +115,7 @@ function App() {
       const pathWithQuery = hash.replace('#/', '').replace('#', '');
       const [path, queryString] = pathWithQuery.split('?');
 
-      const validPages = ['home', 'about', 'collections', 'facilities', 'quality', 'contact'];
+      const validPages = ['home', 'about', 'collections', 'facilities', 'quality', 'responsibility', 'contact'];
       if (validPages.includes(path)) {
         setCurrentPage(path);
         if (path === 'facilities' && queryString) {
@@ -281,6 +282,9 @@ function App() {
       ) : currentPage === 'quality' ? (
         /* DEDICATED FULL-PAGE QUALITY SECTION */
         <QualityPage setCurrentPage={setCurrentPage} />
+      ) : currentPage === 'responsibility' ? (
+        /* DEDICATED FULL-PAGE RESPONSIBILITY SECTION */
+        <ResponsibilityPage setCurrentPage={setCurrentPage} />
       ) : (
         /* DEDICATED FULL-PAGE CONTACT & RFQ SECTION */
         <Contact setCurrentPage={setCurrentPage} />

@@ -86,6 +86,15 @@ const MobileMenu = ({ mobileMenuOpen, currentPage, setMobileMenuOpen }) => {
         </li>
         <li>
           <a
+            href="#/responsibility"
+            className={`mobile-menu-link ${currentPage === 'responsibility' ? 'active' : ''}`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            RESPONSIBILITY
+          </a>
+        </li>
+        <li>
+          <a
             href="#/contact"
             className={`mobile-menu-link ${currentPage === 'contact' ? 'active' : ''}`}
             onClick={() => setMobileMenuOpen(false)}

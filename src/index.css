@@ -6189,3 +6189,53 @@ p {
     border-color: var(--accent);
   }
 }
+
+/* ==========================================================================
+   RESPONSIBILITY SUB-PAGE STYLES
+   ========================================================================== */
+.responsibility-page-wrapper {
+  padding-top: 140px;
+  padding-bottom: 90px;
+  background: var(--bg-primary);
+}
+
+.responsibility-image-frame {
+  border: 1px solid rgba(184, 144, 71, 0.2);
+  box-shadow: var(--gold-glow);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 320px;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .responsibility-page-wrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .responsibility-row {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .responsibility-image-frame {
+    height: 240px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsibility-checklist {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .responsibility-callout-box {
+    padding: 24px !important;
+  }
+}

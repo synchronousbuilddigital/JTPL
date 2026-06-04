@@ -51,6 +51,7 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen }) =>
               </ul>
             </li>
             <li><a href="#/quality" className={`nav-link ${currentPage === 'quality' ? 'active' : ''}`}>QUALITY</a></li>
+            <li><a href="#/responsibility" className={`nav-link ${currentPage === 'responsibility' ? 'active' : ''}`}>RESPONSIBILITY</a></li>
             <li><a href="#/contact" className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}>CONTACT</a></li>
           </ul>
         </nav>
