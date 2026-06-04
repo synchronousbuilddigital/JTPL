@@ -428,7 +428,7 @@ const FacilitiesPage = ({
     <section className="facilities-showroom-wrapper">
 
       <div className="container">
-        
+
         {/* Monospace Breadcrumbs & Top Section */}
         <div style={{ marginBottom: '24px', fontFamily: 'monospace', fontSize: '0.85rem', letterSpacing: '0.1em', textAlign: 'left' }}>
           <span style={{ color: 'var(--text-muted)', cursor: 'pointer' }} onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}>/</span>
@@ -474,7 +474,7 @@ const FacilitiesPage = ({
         <div>
           {subDepartmentsList.map((dept, idx) => (
             <div className="showroom-row" key={dept.id}>
-              
+
               {/* Image Pane Container */}
               <div className="showroom-img-pane">
                 <div className="showroom-img-frame">
@@ -483,10 +483,10 @@ const FacilitiesPage = ({
                     <span className="rec-dot"></span>
                     DIV 0{activeFacilityIndex + 1} // CAM_0{idx + 1}
                   </div>
-                  <img 
+                  <img
                     className="showroom-img"
-                    src={dept.image} 
-                    alt={dept.title} 
+                    src={dept.image}
+                    alt={dept.title}
                   />
                   <div className="showroom-img-coordinates">
                     <span>COORDS: {currentFacility.coordinates}</span>
@@ -506,7 +506,7 @@ const FacilitiesPage = ({
 
                 {/* Specs & Metrics data grids */}
                 <div className="showroom-data-grid">
-                  
+
                   {/* Specifications Box */}
                   <div className="showroom-spec-box">
                     <span className="showroom-spec-title">MACHINERY SPECIFICATIONS</span>
@@ -523,7 +523,7 @@ const FacilitiesPage = ({
                     {dept.metrics.map((metric, mIdx) => {
                       const isPercentage = metric.value.endsWith('%');
                       const numericVal = isPercentage ? parseFloat(metric.value) : null;
-                      
+
                       return (
                         <div className="showroom-metric-card" key={mIdx}>
                           <div className="showroom-metric-icon">
@@ -552,7 +552,7 @@ const FacilitiesPage = ({
                               </svg>
                             )}
                           </div>
-                          
+
                           <div className="showroom-metric-details">
                             <span className="showroom-metric-label">{metric.label}</span>
                             {isPercentage ? (
@@ -592,8 +592,8 @@ const FacilitiesPage = ({
               <h2 className="contact-cta-heading" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#FAF8F5', fontFamily: 'var(--font-serif)', marginBottom: '24px', lineHeight: '1.25' }}>
                 Request a Real-Time Operations Telemetry Review
               </h2>
-              <button 
-                className="btn btn-primary" 
+              <button
+                className="btn btn-primary"
                 onClick={() => {
                   setCurrentPage('contact');
                   window.scrollTo(0, 0);

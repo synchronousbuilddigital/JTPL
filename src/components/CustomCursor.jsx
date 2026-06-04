@@ -5,6 +5,15 @@ const CustomCursor = () => {
   const [ringPosition, setRingPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasFinePointer, setHasFinePointer] = useState(true);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(pointer: fine)');
+    setHasFinePointer(mediaQuery.matches);
+    const handleChange = (e) => setHasFinePointer(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -65,7 +74,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  if (!isVisible) return null;
+  if (!hasFinePointer || !isVisible) return null;
 
   return (
     <div className={isHovered ? 'custom-cursor-hover' : ''}>

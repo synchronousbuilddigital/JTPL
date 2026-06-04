@@ -6,12 +6,10 @@ import heroTowelsImg from '../assets/hero_towels.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
 import salonTowelsCat from '../assets/salon_towels_cat.png';
-import safetyWearCat from '../assets/safety_wear_cat.png';
 import safetyPpeGown from '../assets/safety_ppe_gown.png';
 import safetyMaskBlue from '../assets/safety_mask_blue.png';
 import safetyMaskWhite from '../assets/safety_mask_white.png';
 import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
-import bathBlanketsCat from '../assets/bath_blankets_cat.png';
 import bathBlanketMain from '../assets/bath_blanket_main.png';
 import bathBlanketPink from '../assets/bath_blanket_pink.png';
 import bathBlanketOrange from '../assets/bath_blanket_orange.png';
@@ -377,7 +375,7 @@ const CollectionsPage = ({
     const detailData = getCollectionDetail(activeTab);
 
     return (
-      <section className="collections-page-wrapper" style={{ minHeight: '100vh', paddingTop: '120px', paddingBottom: '80px' }}>
+      <section className="collections-page-wrapper" style={{ minHeight: '100vh' }}>
 
         <div className="container">
           {/* Breadcrumbs */}
@@ -404,7 +402,7 @@ const CollectionsPage = ({
           <div>
             {detailData.subProducts.map((prod, idx) => (
               <div className="collection-row" key={prod.id}>
-                
+
                 {/* Image Pane Container */}
                 <div className="collection-img-pane">
                   {prod.images ? (
@@ -416,10 +414,10 @@ const CollectionsPage = ({
                           <span className="collection-rec-dot"></span>
                           CATALOG // {prod.tag}
                         </div>
-                        <img 
+                        <img
                           className="collection-img"
-                          src={prod.images.main} 
-                          alt={prod.title} 
+                          src={prod.images.main}
+                          alt={prod.title}
                         />
                         <div className="collection-img-coordinates">
                           <span>COORDS: {detailData.coordinates}</span>
@@ -452,10 +450,10 @@ const CollectionsPage = ({
                         <span className="collection-rec-dot"></span>
                         CATALOG // {prod.tag}
                       </div>
-                      <img 
+                      <img
                         className="collection-img"
-                        src={prod.image} 
-                        alt={prod.title} 
+                        src={prod.image}
+                        alt={prod.title}
                       />
                       <div className="collection-img-coordinates">
                         <span>COORDS: {detailData.coordinates}</span>
@@ -476,7 +474,7 @@ const CollectionsPage = ({
 
                   {/* Specs & Metrics data grids */}
                   <div className="collection-data-grid">
-                    
+
                     {/* Specifications Box */}
                     <div className="collection-spec-box">
                       <span className="collection-spec-title">PRODUCT SPECIFICATIONS</span>
@@ -493,7 +491,7 @@ const CollectionsPage = ({
                       {prod.metrics.map((metric, mIdx) => {
                         const isPercentage = metric.value.endsWith('%');
                         const numericVal = isPercentage ? parseFloat(metric.value) : null;
-                        
+
                         return (
                           <div className="collection-metric-card" key={mIdx}>
                             <div className="collection-metric-icon">
@@ -510,7 +508,7 @@ const CollectionsPage = ({
                                 </svg>
                               )}
                             </div>
-                            
+
                             <div className="collection-metric-details">
                               <span className="collection-metric-label">{metric.label}</span>
                               {isPercentage ? (
@@ -542,8 +540,8 @@ const CollectionsPage = ({
 
           {/* Action CTAs */}
           <div style={{ marginTop: '80px', borderTop: '1px solid var(--border-color)', paddingTop: '48px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-            <button 
-              className="hero-company-profile-link" 
+            <button
+              className="hero-company-profile-link"
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
               onClick={() => {
                 window.location.hash = '#/collections';
@@ -597,9 +595,9 @@ const CollectionsPage = ({
                     }
                   }}
                 >
-                  <div 
-                    className="coverflow-card-bg" 
-                    style={{ 
+                  <div
+                    className="coverflow-card-bg"
+                    style={{
                       backgroundImage: `url(${item.image})`,
                       backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
                       backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
@@ -624,8 +622,8 @@ const CollectionsPage = ({
 
         {/* Controls Bar with Navigation and Pagination */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '40px' }} className="coverflow-controls-bar">
-          <button 
-            onClick={handlePrevSuite} 
+          <button
+            onClick={handlePrevSuite}
             aria-label="Previous Slide"
             style={{
               background: 'rgba(26, 25, 23, 0.45)',
@@ -659,8 +657,8 @@ const CollectionsPage = ({
             ))}
           </div>
 
-          <button 
-            onClick={handleNextSuite} 
+          <button
+            onClick={handleNextSuite}
             aria-label="Next Slide"
             style={{
               background: 'rgba(26, 25, 23, 0.45)',
@@ -685,8 +683,8 @@ const CollectionsPage = ({
 
         {/* Back to Home CTA */}
         <div style={{ textAlign: 'center', marginTop: '64px', borderTop: '1px solid var(--border-color)', paddingTop: '48px', marginBottom: '32px' }}>
-          <button 
-            className="hero-company-profile-link" 
+          <button
+            className="hero-company-profile-link"
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
             onClick={() => {
               setCurrentPage('home');

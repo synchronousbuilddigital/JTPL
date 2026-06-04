@@ -90,7 +90,7 @@ const AboutPage = ({ setCurrentPage }) => {
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontSize: '1.3rem', margin: '0 0 20px' }}>
                 Our Mission
               </h3>
-              <ul className="about-values-list" style={{ listStyle: 'none', paddingLeft: 0, color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7' }}>
+              <ul className="about-values-list">
                 <li style={{ marginBottom: '12px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="3" style={{ marginTop: '4px', flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />
@@ -123,7 +123,7 @@ const AboutPage = ({ setCurrentPage }) => {
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent)', fontSize: '1.3rem', margin: '0 0 20px' }}>
                 Our Vision
               </h3>
-              <ul className="about-values-list" style={{ listStyle: 'none', paddingLeft: 0, color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.7' }}>
+              <ul className="about-values-list">
                 <li style={{ marginBottom: '12px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="3" style={{ marginTop: '4px', flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />

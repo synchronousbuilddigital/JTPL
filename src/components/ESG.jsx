@@ -21,6 +21,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
                 key={item.id}
                 className={`esg-interactive-pill ${activeEsgIndex === idx ? 'active' : ''}`}
                 onMouseEnter={() => setActiveEsgIndex(idx)}
+                onClick={() => setActiveEsgIndex(idx)}
               >
                 <div className="pill-icon-frame">{item.icon}</div>
                 <div className="pill-text-frame">
@@ -52,6 +53,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
                   key={item.id}
                   className={`esg-interactive-pill ${activeEsgIndex === globalIdx ? 'active' : ''}`}
                   onMouseEnter={() => setActiveEsgIndex(globalIdx)}
+                  onClick={() => setActiveEsgIndex(globalIdx)}
                 >
                   <div className="pill-icon-frame">{item.icon}</div>
                   <div className="pill-text-frame">

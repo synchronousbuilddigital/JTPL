@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = ({ setCurrentPage }) => {
   return (
     <section className="contact-section-wrapper">
-      
+
       {/* Title & Breadcrumbs Banner */}
       <div className="contact-hero-banner">
         <h1 className="contact-hero-title">Contact Us</h1>
@@ -15,36 +15,36 @@ const Contact = ({ setCurrentPage }) => {
       </div>
 
       <div className="container" style={{ marginTop: '64px' }}>
-        
+
         {/* Main Content Layout Split */}
         <div className="contact-layout-grid">
-          
+
           {/* Left Column: Get In Touch Card Form */}
           <div className="contact-form-card">
             <span className="contact-form-badge">Contact Us</span>
             <h2 className="contact-form-heading">Get In Touch</h2>
-            
+
             <form className="contact-actual-form" onSubmit={(e) => { e.preventDefault(); alert("Message Sent. Thank you for contacting Jasmine Towels Pvt. Ltd."); }}>
               <div className="contact-form-group">
                 <label>Name</label>
                 <input type="text" placeholder="Your Name..." required />
               </div>
-              
+
               <div className="contact-form-group">
                 <label>Email</label>
                 <input type="email" placeholder="example@yourmail.com" required />
               </div>
-              
+
               <div className="contact-form-group">
                 <label>Subject</label>
                 <input type="text" placeholder="Title..." required />
               </div>
-              
+
               <div className="contact-form-group">
                 <label>Message</label>
                 <textarea rows="4" placeholder="Type Here..." required></textarea>
               </div>
-              
+
               <button type="submit" className="contact-submit-btn">Send Now</button>
             </form>
           </div>
@@ -57,7 +57,7 @@ const Contact = ({ setCurrentPage }) => {
 
             {/* 2x2 Info Grid */}
             <div className="contact-info-2x2">
-              
+
               {/* Item 1: Phone Number */}
               <div className="contact-info-item">
                 <div className="contact-info-icon">
@@ -116,13 +116,13 @@ const Contact = ({ setCurrentPage }) => {
 
             {/* Styled Google Maps iframe */}
             <div className="contact-map-card">
-              <iframe 
+              <iframe
                 title="Jasmine Towels HQ Map Locator"
-                src="https://maps.google.com/maps?q=Jasmine%20Towels%20Pvt.%20Ltd.,%20Arruppukottai%20Road,%20Perungudi,%20Madurai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                width="100%" 
-                height="220" 
-                style={{ border: 0, borderRadius: '12px', filter: 'grayscale(1) contrast(1.15) brightness(1.1)' }} 
-                allowFullScreen="" 
+                src="https://maps.google.com/maps?q=Jasmine%20Towels%20Pvt.%20Ltd.,%20Arruppukottai%20Road,%20Perungudi,%20Madurai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0, borderRadius: '12px', filter: 'grayscale(1) contrast(1.15) brightness(1.1)' }}
+                allowFullScreen=""
                 loading="lazy"
               ></iframe>
             </div>

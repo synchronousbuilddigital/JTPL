@@ -1,11 +1,11 @@
 import React from 'react';
 import { COLLECTIONS_DATA } from '../constants/data';
 
-const Collections = ({ 
-  activeSuiteIndex, 
-  setActiveSuiteIndex, 
-  handlePrevSuite, 
-  handleNextSuite, 
+const Collections = ({
+  activeSuiteIndex,
+  setActiveSuiteIndex,
+  handlePrevSuite,
+  handleNextSuite,
   getCoverflowStyle,
   setCurrentPage
 }) => {
@@ -41,9 +41,9 @@ const Collections = ({
                     }
                   }}
                 >
-                  <div 
-                    className="coverflow-card-bg" 
-                    style={{ 
+                  <div
+                    className="coverflow-card-bg"
+                    style={{
                       backgroundImage: `url(${item.image})`,
                       backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
                       backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
@@ -68,8 +68,8 @@ const Collections = ({
 
         {/* Controls Bar with Navigation and Pagination */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '40px' }} className="coverflow-controls-bar">
-          <button 
-            onClick={handlePrevSuite} 
+          <button
+            onClick={handlePrevSuite}
             aria-label="Previous Slide"
             style={{
               background: 'rgba(26, 25, 23, 0.45)',
@@ -103,8 +103,8 @@ const Collections = ({
             ))}
           </div>
 
-          <button 
-            onClick={handleNextSuite} 
+          <button
+            onClick={handleNextSuite}
             aria-label="Next Slide"
             style={{
               background: 'rgba(26, 25, 23, 0.45)',
