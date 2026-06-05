@@ -1,7 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HERO_TABS } from '../constants/data';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
+
+const TypingTitle = ({ text }) => {
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    setDisplayedText('');
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex < text.length) {
+        setDisplayedText(text.substring(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 35);
+    
+    return () => clearInterval(interval);
+  }, [text]);
+
+  const words = displayedText.split(' ');
+  return (
+    <>
+      {words.map((word, i, arr) => {
+        if (i === arr.length - 1) {
+          return <span key={i}>{word}</span>;
+        }
+        return word + ' ';
+      })}
+      <span className="hero-typing-cursor">|</span>
+    </>
+  );
+};
 
 const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
   useEffect(() => {
@@ -40,18 +72,41 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
             <div className="hero-dynamic-text-panel" key={heroTab}>
               <span className="hero-dynamic-tag">{HERO_TABS[heroTab].tag}</span>
               <h1 className="hero-unique-title">
-                {HERO_TABS[heroTab].title.split(' ').map((word, i, arr) => {
-                  if (i === arr.length - 1) {
-                    return <span key={i}>{word}</span>;
-                  }
-                  return word + ' ';
-                })}
+                <TypingTitle text={HERO_TABS[heroTab].title} />
               </h1>
+
+              {/* Mobile-Only Showcase (Positioned between typing title and content description) */}
+              <div className="hero-mobile-only-showcase">
+                <div className="kinetic-showcase-wrapper" style={{ margin: '0 auto' }}>
+                  <div className="kinetic-capsule main-frame">
+                    <img
+                      className="kinetic-img"
+                      src={HERO_TABS[heroTab].image}
+                      alt={HERO_TABS[heroTab].label}
+                      key={heroTab}
+                    />
+                    <div className="capsule-frame-label">{HERO_TABS[heroTab].badgeText}</div>
+                  </div>
+                  <div className="kinetic-capsule offset-frame-back">
+                    <img
+                      className="kinetic-img"
+                      src={weavingLoomsImg}
+                      alt="Integrated weaving loom line operations"
+                    />
+                  </div>
+                  <div className="kinetic-capsule spotlight-frame">
+                    <img
+                      className="kinetic-img"
+                      src={kitchenLinenImg}
+                      alt="Macro stitching details"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <p className="hero-unique-desc">
                 {HERO_TABS[heroTab].desc}
               </p>
-
-
             </div>
 
             {/* Buttons */}

@@ -95,6 +95,14 @@ const Footer = ({ setCurrentPage }) => {
                   Operational Mills
                 </button>
               </li>
+              <li>
+                <button
+                  className="footer-nav-btn"
+                  onClick={() => { setCurrentPage('careers'); window.scrollTo(0, 0); }}
+                >
+                  Careers
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -150,6 +158,14 @@ const Footer = ({ setCurrentPage }) => {
                 onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}
               >
                 Export Guidelines
+              </button>
+            </li>
+            <li>
+              <button
+                className="footer-bottom-link-btn"
+                onClick={() => { setCurrentPage('careers'); window.scrollTo(0, 0); }}
+              >
+                Careers
               </button>
             </li>
           </ul>

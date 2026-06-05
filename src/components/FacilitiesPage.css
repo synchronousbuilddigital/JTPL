@@ -620,50 +620,59 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .facilities-showroom-wrapper {
-    padding-top: 70px !important;
+    padding-top: 80px !important;
     padding-bottom: 40px !important;
   }
-  /* Keep side-by-side row design but scale metrics */
+  /* Stack image on top, content on bottom */
   .showroom-row,
   .showroom-row:nth-child(even) {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    margin-bottom: 24px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    margin-bottom: 40px !important;
+    align-items: stretch !important;
   }
   .showroom-img-pane {
-    flex: 0 0 42% !important;
-    width: 42% !important;
-    padding: 6px !important;
-    border-radius: 8px !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
   }
   .showroom-info-pane {
-    flex: 0 0 58% !important;
-    width: 58% !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
   }
   .showroom-img-frame {
-    height: 150px !important;
-    border-radius: 6px !important;
+    height: 220px !important;
+    border-radius: 10px !important;
   }
   .showroom-title {
-    font-size: 0.85rem !important;
-    margin-bottom: 4px !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
   }
   .showroom-desc {
-    font-size: 0.62rem !important;
-    line-height: 1.35 !important;
-    margin-bottom: 10px !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 14px !important;
   }
 
   /* Data grid inside the info pane - stack vertically so items fit perfectly */
   .showroom-data-grid {
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    margin-top: 10px !important;
+    gap: 12px !important;
+    margin-top: 12px !important;
   }
+}
 
+@media (max-width: 480px) {
+  .showroom-img-frame {
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 576px) {
   /* Swapper Navigation Buttons (Horizontal Swipe Scroll) */
   .showroom-nav-switcher {
     display: flex !important;
