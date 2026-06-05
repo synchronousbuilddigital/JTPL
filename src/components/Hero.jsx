@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HERO_TABS } from '../constants/data';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 
 const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroTab((prev) => (prev + 1) % HERO_TABS.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [heroTab, setHeroTab]);
   return (
     <section id="home" className="hero-unique-section">
       <div className="ambient-radar-glow-1"></div>

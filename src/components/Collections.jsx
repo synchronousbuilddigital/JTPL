@@ -127,6 +127,32 @@ const Collections = ({
           </button>
         </div>
 
+        {/* Explore More Button */}
+        <div style={{ textAlign: 'center', marginTop: '40px' }} className="reveal-on-scroll reveal-up delay-300">
+          <button
+            onClick={() => {
+              setCurrentPage('collections');
+              window.location.hash = '#/collections';
+            }}
+            className="btn btn-secondary"
+            style={{ 
+              padding: '14px 32px', 
+              fontSize: '0.8rem', 
+              letterSpacing: '0.15em',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              border: '1px solid var(--accent)',
+              cursor: 'pointer'
+            }}
+          >
+            Explore Full Collection
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: '8px', verticalAlign: 'middle', transform: 'translateY(-1px)' }}>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
       </div>
     </section>
   );

@@ -363,7 +363,7 @@ p {
 }
 
 .header.scrolled {
-  padding: 4px 0;
+  padding: 2px 0;
   box-shadow: var(--shadow-sm);
   background: rgba(255, 255, 255, 0.98);
 }
@@ -380,47 +380,47 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
+  padding: 12px 0;
   transition: all var(--transition);
 }
 
 @media (max-width: 991px) {
   .nav-container {
-    padding: 14px 0 !important;
+    padding: 10px 0 !important;
   }
 }
 
 @media (max-width: 576px) {
   .nav-container {
-    padding: 10px 0 !important;
+    padding: 8px 0 !important;
   }
 }
 
 .header.scrolled .nav-container {
-  padding: 14px 0;
+  padding: 6px 0;
 }
 
 @media (max-width: 991px) {
   .header.scrolled .nav-container {
-    padding: 8px 0 !important;
+    padding: 5px 0 !important;
   }
 }
 
 @media (max-width: 576px) {
   .header.scrolled .nav-container {
-    padding: 6px 0 !important;
+    padding: 4px 0 !important;
   }
 }
 
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .logo-text {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1em;
   font-weight: 500;
   background: var(--gold-gradient);
@@ -431,13 +431,13 @@ p {
 
 @media (max-width: 991px) {
   .logo-text {
-    font-size: 1.5rem !important;
+    font-size: 1.25rem !important;
   }
 }
 
 @media (max-width: 576px) {
   .logo-text {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
   }
 }
 
@@ -445,8 +445,8 @@ p {
   color: var(--text-secondary);
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   display: block;
   margin-top: -2px;
@@ -455,15 +455,15 @@ p {
 
 @media (max-width: 991px) {
   .logo-accent {
-    font-size: 0.58rem !important;
-    letter-spacing: 0.22em !important;
+    font-size: 0.5rem !important;
+    letter-spacing: 0.15em !important;
   }
 }
 
 @media (max-width: 576px) {
   .logo-accent {
-    font-size: 0.5rem !important;
-    letter-spacing: 0.15em !important;
+    font-size: 0.44rem !important;
+    letter-spacing: 0.12em !important;
   }
 }
 
@@ -486,20 +486,20 @@ p {
 }
 
 .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-secondary);
   position: relative;
-  padding: 8px 0;
+  padding: 4px 0;
   transition: font-size 0.3s ease, letter-spacing 0.3s ease;
 }
 
 @media (max-width: 1200px) {
   .nav-link {
-    font-size: 0.72rem !important;
-    letter-spacing: 0.12em !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.1em !important;
   }
 }
 
@@ -718,7 +718,7 @@ p {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 80px;
   background-color: var(--bg-primary) !important;
   background-image:
@@ -727,6 +727,13 @@ p {
   background-size: 44px 44px !important;
   overflow: hidden;
   border-bottom: 1px solid var(--border-color);
+
+  @media (max-width: 991px) {
+    padding-top: 80px !important;
+  }
+  @media (max-width: 576px) {
+    padding-top: 70px !important;
+  }
 }
 
 /* Ambient Radial Glows */
@@ -1232,6 +1239,18 @@ p {
   height: 100%;
   object-fit: cover;
   transition: transform 6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: fadeInImg 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes fadeInImg {
+  from {
+    opacity: 0.15;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .kinetic-capsule:hover .kinetic-img {
@@ -4029,7 +4048,7 @@ p {
 .contact-page-wrapper {
   background: var(--bg-primary);
   min-height: 100vh;
-  padding-top: 185px;
+  padding-top: 140px;
   padding-bottom: 80px;
   position: relative;
   overflow: hidden;
@@ -4044,7 +4063,7 @@ p {
   .collections-page-wrapper,
   .quality-page-wrapper,
   .contact-page-wrapper {
-    padding-top: 110px !important;
+    padding-top: 90px !important;
     padding-bottom: 50px !important;
   }
 }
@@ -4055,7 +4074,7 @@ p {
   .collections-page-wrapper,
   .quality-page-wrapper,
   .contact-page-wrapper {
-    padding-top: 90px !important;
+    padding-top: 80px !important;
     padding-bottom: 40px !important;
   }
 }
@@ -6194,7 +6213,7 @@ p {
    RESPONSIBILITY SUB-PAGE STYLES
    ========================================================================== */
 .responsibility-page-wrapper {
-  padding-top: 140px;
+  padding-top: 110px;
   padding-bottom: 90px;
   background: var(--bg-primary);
 }
@@ -6211,7 +6230,7 @@ p {
 
 @media (max-width: 991px) {
   .responsibility-page-wrapper {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 60px;
   }
 }
