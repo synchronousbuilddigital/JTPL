@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { COLLECTIONS_DATA } from '../constants/data';
 
 const Collections = ({
@@ -9,6 +9,12 @@ const Collections = ({
   getCoverflowStyle,
   setCurrentPage
 }) => {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSuiteIndex((prev) => (prev + 1) % COLLECTIONS_DATA.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [setActiveSuiteIndex]);
   return (
     <section id="suites" className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)', overflow: 'hidden' }}>
       <div className="container" style={{ position: 'relative' }}>
@@ -35,8 +41,19 @@ const Collections = ({
                     if (!isActive) {
                       setActiveSuiteIndex(index);
                     } else {
-                      // Click active card to trigger navigation to contact
-                      setCurrentPage('contact');
+                      const tabs = [
+                        'n_series',
+                        'p_series',
+                        'duvet_covers',
+                        'kitchen_linen',
+                        'salon_towels',
+                        'safety_wear',
+                        'thermal',
+                        'bath_blankets'
+                      ];
+                      const targetTab = tabs[index] || 'n_series';
+                      setCurrentPage('collections');
+                      window.location.hash = `#/collections?tab=${targetTab}`;
                       window.scrollTo(0, 0);
                     }
                   }}

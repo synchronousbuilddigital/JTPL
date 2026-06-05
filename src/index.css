@@ -3343,8 +3343,8 @@ p {
 }
 
 .esg-interactive-pill {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 14px;
   padding: 16px 20px;
   display: flex;
@@ -3354,13 +3354,30 @@ p {
   position: relative;
   transition: all var(--transition) cubic-bezier(0.25, 1, 0.5, 1);
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .esg-interactive-pill:hover,
 .esg-interactive-pill.active {
   border-color: rgba(184, 144, 71, 0.35);
-  background: rgba(184, 144, 71, 0.03);
+  background: rgba(184, 144, 71, 0.02);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(184, 144, 71, 0.05);
+}
+
+.pill-laser-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: var(--accent);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.esg-interactive-pill.active .pill-laser-line,
+.esg-interactive-pill:hover .pill-laser-line {
+  width: 100%;
 }
 
 .pill-icon-frame {
@@ -3390,7 +3407,7 @@ p {
 .pill-text-frame h4 {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #FAF8F5;
+  color: var(--text-primary);
   margin: 0 0 3px;
 }
 
@@ -3425,10 +3442,11 @@ p {
 
 .esg-orbit-rim-dashed {
   position: absolute;
-  inset: -6px;
+  inset: -8px;
   border-radius: 50%;
-  border: 1px solid rgba(184, 144, 71, 0.1);
-  animation: spin-orbit 35s linear infinite;
+  border: 1.5px dashed rgba(184, 144, 71, 0.45);
+  animation: spin-orbit 10s linear infinite;
+  transform-origin: center;
   pointer-events: none;
 }
 
@@ -3446,6 +3464,16 @@ p {
   position: relative;
   z-index: 2;
   transition: all 0.4s ease;
+  animation: emblem-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes emblem-pulse {
+  0% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 10px 35px rgba(184, 144, 71, 0.15), 0 0 15px rgba(184, 144, 71, 0.05);
+  }
 }
 
 .esg-emblem-logo {
@@ -3522,13 +3550,13 @@ p {
 .esg-detail-panel {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   padding: 40px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
 }
 
 .esg-detail-panel::before {
@@ -3545,6 +3573,18 @@ p {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  animation: esg-fade-in 0.45s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes esg-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .badge-meta {
@@ -3564,7 +3604,7 @@ p {
 .esg-detail-meta h3 {
   font-family: var(--font-serif);
   font-size: 1.8rem;
-  color: #FAF8F5;
+  color: var(--text-primary);
   margin: 0 0 20px;
   font-weight: 500;
 }
@@ -5027,11 +5067,10 @@ p {
   justify-content: flex-start;
   color: var(--accent);
   margin-top: 2px;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .quality-card-ref:hover .quality-card-icon {
-  transform: scale(1.2) rotate(5deg);
+  transform: none;
 }
 
 .quality-card-title {

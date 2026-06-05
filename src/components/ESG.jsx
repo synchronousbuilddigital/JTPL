@@ -69,7 +69,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
 
         {/* Active Detail Showcase Panel */}
         <div className="esg-detail-panel reveal-on-scroll reveal-up delay-300">
-          <div className="esg-detail-content">
+          <div className="esg-detail-content" key={activeEsgIndex}>
             <div className="esg-detail-meta">
               <span className="badge-meta">INITIATIVE 0{activeEsgIndex + 1}</span>
               <h3>{ESG_INITIATIVES[activeEsgIndex].title} — {ESG_INITIATIVES[activeEsgIndex].subtitle}</h3>

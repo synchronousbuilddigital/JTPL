@@ -17,6 +17,18 @@ import bathBlanketPink from '../assets/bath_blanket_pink.png';
 import bathBlanketOrange from '../assets/bath_blanket_orange.png';
 import bathBlanketCoral from '../assets/bath_blanket_coral.png';
 import bathBlanketWhite from '../assets/bath_blanket_white.png';
+import insulatedOvenMitts from '../assets/insulated_oven_mitts.png';
+import percaleCrispCover from '../assets/percale_crisp_cover.png';
+import kitchenLinenBlue from '../assets/kitchen_linen_blue.png';
+import kitchenLinenStripe from '../assets/kitchen_linen_stripe.png';
+import kitchenLinenWaffle from '../assets/kitchen_linen_waffle.png';
+import nSeriesWhite from '../assets/n_series_white.png';
+import nSeriesBrown from '../assets/n_series_brown.png';
+import nSeriesCoral from '../assets/n_series_coral.png';
+import nSeriesPeach from '../assets/n_series_peach.png';
+import nSeriesMagenta from '../assets/n_series_magenta.png';
+import pSeriesMain from '../assets/p_series_main.png';
+import pSeriesGold from '../assets/p_series_gold.png';
 
 import './CollectionsPage.css';
 
@@ -38,6 +50,8 @@ const CollectionsPage = ({
     }
     return null;
   });
+
+  const [selectedImages, setSelectedImages] = useState({});
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -89,6 +103,13 @@ const CollectionsPage = ({
               tag: 'CLINICAL // WRAPS',
               desc: 'Double-sided heavy flannel sheets designed for post-operative patient care. Retains body heat rapidly while maintaining a soft, non-abrasive touch against sensitive skin, standing up to intensive hospital laundry sanitization.',
               image: bathBlanketMain,
+              images: {
+                main: bathBlanketMain,
+                pink: bathBlanketPink,
+                orange: bathBlanketOrange,
+                coral: bathBlanketCoral,
+                white: bathBlanketWhite
+              },
               specs: {
                 'Fiber Blend': '80% Organic Cotton / 20% Polyester',
                 'Napping Style': 'Double-sided high-density brushed nap',
@@ -131,7 +152,7 @@ const CollectionsPage = ({
               title: 'Classic Crisp Percale Covers',
               tag: 'PERCALE // CRISP',
               desc: '300 Thread Count long-staple cotton percale covers that are highly breathable, crisp to the touch, and perfect for hot climates and luxury resorts.',
-              image: duvetCoversCat,
+              image: percaleCrispCover,
               specs: {
                 'Thread Count': '300 TC Premium Grid',
                 'Weave Pattern': '1/1 plain weave structure',
@@ -158,6 +179,12 @@ const CollectionsPage = ({
               tag: 'WAFFLE // TEA',
               desc: 'Super absorbent and completely lint-free tea towels for drying glass, silver, and crystal without leaving fibers or streaks.',
               image: kitchenLinenImg,
+              images: {
+                main: kitchenLinenImg,
+                blue: kitchenLinenBlue,
+                stripe: kitchenLinenStripe,
+                waffle: kitchenLinenWaffle
+              },
               specs: {
                 'Material': '100% Combed Cotton',
                 'Weave Style': 'Deep cell waffle structure',
@@ -167,23 +194,6 @@ const CollectionsPage = ({
               metrics: [
                 { label: 'Absorbency Speed', value: '98%' },
                 { label: 'Lint Rating', value: '0% Lint' }
-              ]
-            },
-            {
-              id: 'oven_mitts',
-              title: 'Insulated Canvas Oven Mitts',
-              tag: 'PROTECTION // MITTS',
-              desc: 'Double-layered heavy cotton canvas mitts with heat-resistant silicone textured padding and integrated hanging loops.',
-              image: kitchenLinenImg,
-              specs: {
-                'Inner Filling': 'Double needle quilted felt padding',
-                'Grip Type': 'Flame-resistant silicone grip print',
-                'Thermal Limit': 'Certified up to 250°C',
-                'Stitching': 'Nomex heat-resistant threads'
-              },
-              metrics: [
-                { label: 'Thermal Shielding', value: '99%' },
-                { label: 'Flexibility Index', value: '94%' }
               ]
             }
           ]
@@ -300,31 +310,101 @@ const CollectionsPage = ({
             }
           ]
         };
-      case 'towels':
       case 'n_series':
-      case 'p_series':
-      default:
+      case 'towels':
         return {
-          title: 'Institutional & Luxury Terry Collections',
-          badge: '01 // TERRY',
-          description: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders and elegant low-profile dobby borders.',
+          title: 'N-Series Institutional Terry Collections',
+          badge: '01A // INSTITUTIONAL TERRY',
+          description: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders designed for global hospitality and institutional usage.',
           coordinates: '9.9176° N, 78.1560° E',
           subProducts: [
             {
-              id: 'premium_towel_suite',
-              title: 'Premium Combed Terry Towel Suite',
-              tag: 'TERRY // PREMIUM SUITE',
-              desc: 'The ultimate luxury and durability standard. Combines GOTS-certified long-staple organic cotton yarn with high-density 650 GSM construction. Engineered to maintain its ultra-plush texture and maximum absorbency even after 300+ institutional laundry cycles.',
-              image: luxuryTerryTowel,
+              id: 'n_series_suite',
+              title: 'N-Series Luxury Institutional Towels',
+              tag: 'TERRY // INSTITUTIONAL',
+              desc: 'Engineered for exceptional durability and rapid moisture absorption. Made with premium combed ring-spun cotton and reinforced double-stitched side hems to withstand intensive commercial wash cycles.',
+              image: nSeriesMain,
+              images: {
+                main: nSeriesMain,
+                white: nSeriesWhite,
+                brown: nSeriesBrown,
+                coral: nSeriesCoral,
+                peach: nSeriesPeach,
+                magenta: nSeriesMagenta
+              },
               specs: {
                 'Cotton Grade': '100% Combed Ring-Spun Cotton',
-                'GSM Weight': '650 GSM High Density',
-                'Border Style': 'Reinforced Double-Stitched & Dobby Borders',
-                'Certifications': 'GOTS Certified & OEKO-TEX Standard 100'
+                'GSM Weight': '600 GSM Commercial Grade',
+                'Border Style': 'Reinforced Double-Stitched Borders',
+                'Lifespan': '300+ Commercial Wash Cycles'
               },
               metrics: [
                 { label: 'Wash Cycle Life', value: '300+ Washes' },
+                { label: 'Absorbency Speed', value: '98%' }
+              ]
+            }
+          ]
+        };
+      case 'p_series':
+        return {
+          title: 'P-Series Retail & Luxury Terry Collections',
+          badge: '01B // RETAIL LUXURY',
+          description: 'Premium ring-spun towels featuring elegant low-profile dobby borders designed for high-end retail brands and boutique resorts.',
+          coordinates: '9.9176° N, 78.1560° E',
+          subProducts: [
+            {
+              id: 'p_series_suite',
+              title: 'P-Series Combed Terry Towel Suite',
+              tag: 'TERRY // LUXURY RETAIL',
+              desc: 'The ultimate luxury standard. Combines GOTS-certified long-staple organic cotton yarn with high-density 650 GSM construction. Features a sophisticated low-profile dobby border and ultra-plush skin feel.',
+              image: pSeriesMain,
+              images: {
+                main: pSeriesMain,
+                gold: pSeriesGold
+              },
+              specs: {
+                'Cotton Grade': '100% GOTS-Certified Combed Cotton',
+                'GSM Weight': '650 GSM High Density',
+                'Border Style': 'Sophisticated Low-Profile Dobby Borders',
+                'Texture': 'Ultra-Plush Premium Handfeel'
+              },
+              metrics: [
+                { label: 'Softness Score', value: '100%' },
                 { label: 'Absorbency Speed', value: '99%' }
+              ]
+            }
+          ]
+        };
+      default:
+        return {
+          title: 'N-Series Institutional Terry Collections',
+          badge: '01A // INSTITUTIONAL TERRY',
+          description: 'Ultra-absorbent combed cotton towels with reinforced double-stitched borders designed for global hospitality and institutional usage.',
+          coordinates: '9.9176° N, 78.1560° E',
+          subProducts: [
+            {
+              id: 'n_series_suite',
+              title: 'N-Series Luxury Institutional Towels',
+              tag: 'TERRY // INSTITUTIONAL',
+              desc: 'Engineered for exceptional durability and rapid moisture absorption. Made with premium combed ring-spun cotton and reinforced double-stitched side hems to withstand intensive commercial wash cycles.',
+              image: nSeriesMain,
+              images: {
+                main: nSeriesMain,
+                white: nSeriesWhite,
+                brown: nSeriesBrown,
+                coral: nSeriesCoral,
+                peach: nSeriesPeach,
+                magenta: nSeriesMagenta
+              },
+              specs: {
+                'Cotton Grade': '100% Combed Ring-Spun Cotton',
+                'GSM Weight': '600 GSM Commercial Grade',
+                'Border Style': 'Reinforced Double-Stitched Borders',
+                'Lifespan': '300+ Commercial Wash Cycles'
+              },
+              metrics: [
+                { label: 'Wash Cycle Life', value: '300+ Washes' },
+                { label: 'Absorbency Speed', value: '98%' }
               ]
             }
           ]
@@ -335,7 +415,8 @@ const CollectionsPage = ({
   // Handler to route active coverflow clicks directly into tabs
   const handleActiveCardClick = (index) => {
     const tabs = [
-      'towels',
+      'n_series',
+      'p_series',
       'duvet_covers',
       'kitchen_linen',
       'salon_towels',
@@ -343,7 +424,7 @@ const CollectionsPage = ({
       'thermal',
       'bath_blankets'
     ];
-    const targetTab = tabs[index] || 'towels';
+    const targetTab = tabs[index] || 'n_series';
     window.location.hash = `#/collections?tab=${targetTab}`;
   };
 
@@ -379,8 +460,8 @@ const CollectionsPage = ({
           {/* Showroom Cards List */}
           <div className="collection-cards-grid">
             {detailData.subProducts.map((prod, idx) => {
-              const activeImg = prod.image;
-              
+              const activeImg = prod.images ? (prod.images[selectedImages[prod.id] || 'main'] || prod.image) : prod.image;
+
               return (
                 <div className="collection-product-card reveal-on-scroll reveal-up" key={prod.id}>
                   {/* Card Left: Image Container */}
@@ -402,6 +483,53 @@ const CollectionsPage = ({
                     <h3 className="collection-product-title">{prod.title}</h3>
                     <p className="collection-product-desc">{prod.desc}</p>
 
+                    {/* Color Swatch Selector (if multiple images are available) */}
+                    {prod.images && (
+                      <div className="collection-product-colors" style={{ marginBottom: '24px' }}>
+                        <span className="collection-card-specs-title" style={{ display: 'block', marginBottom: '8px' }}>AVAILABLE SHADES</span>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                          {Object.entries(prod.images).map(([colorKey, colorImg]) => {
+                            const isSelected = (selectedImages[prod.id] || 'main') === colorKey;
+                            
+                            // Map color key to clean CSS backgrounds
+                            const colorMap = {
+                              main: '#EAE6DF',
+                              white: '#FFFFFF',
+                              pink: '#F5C6CB',
+                              orange: '#EF8354',
+                              coral: '#FF7F50'
+                            };
+
+                            return (
+                              <button
+                                key={colorKey}
+                                className={`color-swatch-btn ${isSelected ? 'active' : ''}`}
+                                style={{
+                                  width: '24px',
+                                  height: '24px',
+                                  borderRadius: '50%',
+                                  border: isSelected ? '2px solid var(--accent)' : '1px solid rgba(0,0,0,0.15)',
+                                  backgroundColor: colorMap[colorKey] || '#ccc',
+                                  cursor: 'pointer',
+                                  padding: 0,
+                                  boxShadow: isSelected ? '0 0 5px rgba(184, 144, 71, 0.4)' : 'none',
+                                  transition: 'all 0.2s ease',
+                                  transform: isSelected ? 'scale(1.15)' : 'scale(1)'
+                                }}
+                                onClick={() => {
+                                  setSelectedImages(prev => ({
+                                    ...prev,
+                                    [prod.id]: colorKey
+                                  }));
+                                }}
+                                title={colorKey.toUpperCase()}
+                              />
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Specs Box */}
                     <div className="collection-card-specs">
                       <span className="collection-card-specs-title">PRODUCT SPECIFICATIONS</span>
@@ -413,50 +541,6 @@ const CollectionsPage = ({
                           </div>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Metrics Box */}
-                    <div className="collection-card-metrics">
-                      {prod.metrics.map((metric, mIdx) => {
-                        const isPercentage = metric.value.endsWith('%');
-                        const numericVal = isPercentage ? parseFloat(metric.value) : null;
-
-                        return (
-                          <div className="collection-card-metric-item" key={mIdx}>
-                            <div className="collection-card-metric-icon">
-                              {mIdx === 0 && (
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                </svg>
-                              )}
-                              {mIdx === 1 && (
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                                  <circle cx="12" cy="12" r="10" />
-                                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                                  <path d="M2 12h20" />
-                                </svg>
-                              )}
-                            </div>
-
-                            <div className="collection-card-metric-details">
-                              <span className="collection-card-metric-label">{metric.label}</span>
-                              {isPercentage ? (
-                                <>
-                                  <div className="collection-card-metric-value-row">
-                                    <span className="collection-card-metric-value">{metric.value}</span>
-                                    <span style={{ fontSize: '0.55rem', color: '#55c57a', fontWeight: 'bold', fontFamily: 'monospace' }}>COMPLIANT</span>
-                                  </div>
-                                  <div className="collection-card-metric-bar">
-                                    <div className="collection-card-metric-bar-fill" style={{ width: `${numericVal}%` }}></div>
-                                  </div>
-                                </>
-                              ) : (
-                                <span className="collection-card-metric-tag">{metric.value}</span>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      })}
                     </div>
 
                   </div>
@@ -521,7 +605,7 @@ const CollectionsPage = ({
               return mapping[title] || 'towels';
             };
             const targetTab = getTabFromTitle(item.title);
-            
+
             return (
               <div
                 key={index}
@@ -551,7 +635,7 @@ const CollectionsPage = ({
                   <span className="collection-category-card-subtitle">{item.subtitle}</span>
                   <h3 className="collection-category-card-title">{item.title}</h3>
                   <p className="collection-category-card-desc">{item.desc}</p>
-                  
+
                   <button className="collection-category-card-btn">
                     <span>Explore Specifications</span>
                     <span style={{ fontSize: '1rem' }}>&rarr;</span>

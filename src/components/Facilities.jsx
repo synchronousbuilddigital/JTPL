@@ -52,16 +52,6 @@ const Facilities = ({
                     alt={facility.title}
                   />
                   <div className="facility-card-image-overlay"></div>
-
-                  {/* Minimal Hotspots */}
-                  <div className="facility-card-hotspot" style={{ top: '35%', left: '55%' }}>
-                    <span className="card-hotspot-core"></span>
-                    <span className="card-hotspot-halo"></span>
-                  </div>
-                  <div className="facility-card-hotspot secondary" style={{ top: '65%', left: '30%' }}>
-                    <span className="card-hotspot-core"></span>
-                    <span className="card-hotspot-halo"></span>
-                  </div>
                 </div>
 
                 {/* Card Content Slate */}
