@@ -5934,13 +5934,13 @@ p {
   }
 
   .contact-form-card {
-    padding: 20px 16px !important;
+    padding: 36px 28px !important;
   }
 
   .contact-intro-text {
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 20px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 24px !important;
   }
 
   .contact-form-heading {
@@ -5948,7 +5948,7 @@ p {
   }
 
   .contact-actual-form {
-    gap: 12px !important;
+    gap: 16px !important;
   }
 
   .contact-form-group label {
@@ -5959,24 +5959,35 @@ p {
   .contact-form-group input,
   .contact-form-group textarea {
     padding: 10px 12px !important;
-    font-size: 0.75rem !important;
+    font-size: 0.85rem !important;
   }
 
   .contact-submit-btn {
-    padding: 10px 20px !important;
-    font-size: 0.75rem !important;
+    padding: 12px 24px !important;
+    font-size: 0.8rem !important;
     margin-top: 6px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .contact-details-side {
+    margin-top: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .contact-layout-grid {
-    gap: 12px;
+    gap: 24px !important;
   }
 
   .contact-form-card {
-    padding: 12px 10px !important;
-    border-radius: 10px !important;
+    padding: 24px 16px !important;
+    border-radius: 12px !important;
   }
 }
 
