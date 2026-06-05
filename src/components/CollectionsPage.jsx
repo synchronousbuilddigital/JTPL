@@ -3,6 +3,8 @@ import { COLLECTIONS_DATA } from '../constants/data';
 
 // Import photographic assets
 import heroTowelsImg from '../assets/hero_towels.png';
+import nSeriesMain from '../assets/n_series_main.png';
+import luxuryTerryTowel from '../assets/luxury_terry_towel.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
 import salonTowelsCat from '../assets/salon_towels_cat.png';
@@ -52,9 +54,8 @@ const CollectionsPage = ({
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // IntersectionObserver for scroll-reveal of collection rows
+  // IntersectionObserver for scroll-reveal of collection cards & overview category cards
   useEffect(() => {
-    if (!activeTab || activeTab === 'overview') return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -63,12 +64,12 @@ const CollectionsPage = ({
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
-    const rows = document.querySelectorAll('.collection-row');
-    rows.forEach((row) => observer.observe(row));
+    const elements = document.querySelectorAll('.collection-product-card, .collection-category-card');
+    elements.forEach((el) => observer.observe(el));
     return () => {
-      rows.forEach((row) => observer.unobserve(row));
+      elements.forEach((el) => observer.unobserve(el));
     };
   }, [activeTab]);
 
@@ -87,13 +88,7 @@ const CollectionsPage = ({
               title: 'Heavy-Napped Flannel Wraps',
               tag: 'CLINICAL // WRAPS',
               desc: 'Double-sided heavy flannel sheets designed for post-operative patient care. Retains body heat rapidly while maintaining a soft, non-abrasive touch against sensitive skin, standing up to intensive hospital laundry sanitization.',
-              images: {
-                main: bathBlanketMain,
-                pink: bathBlanketPink,
-                orange: bathBlanketOrange,
-                coral: bathBlanketCoral,
-                white: bathBlanketWhite
-              },
+              image: bathBlanketMain,
               specs: {
                 'Fiber Blend': '80% Organic Cotton / 20% Polyester',
                 'Napping Style': 'Double-sided high-density brushed nap',
@@ -316,37 +311,20 @@ const CollectionsPage = ({
           coordinates: '9.9176° N, 78.1560° E',
           subProducts: [
             {
-              id: 'n_series',
-              title: 'N Series Institutional Towels',
-              tag: 'TERRY // N SERIES',
-              desc: 'Engineered for extreme wash-durability in high-end hotels. Features double-loop pile construction, lock-stitch side hems, and rapid moisture absorption.',
-              image: heroTowelsImg,
+              id: 'premium_towel_suite',
+              title: 'Premium Combed Terry Towel Suite',
+              tag: 'TERRY // PREMIUM SUITE',
+              desc: 'The ultimate luxury and durability standard. Combines GOTS-certified long-staple organic cotton yarn with high-density 650 GSM construction. Engineered to maintain its ultra-plush texture and maximum absorbency even after 300+ institutional laundry cycles.',
+              image: luxuryTerryTowel,
               specs: {
                 'Cotton Grade': '100% Combed Ring-Spun Cotton',
-                'GSM Weight': '600 GSM High Density',
-                'Border Style': 'Reinforced Double-Stitched Borders',
-                'Certifications': 'GOTS Certified Organic Thread'
+                'GSM Weight': '650 GSM High Density',
+                'Border Style': 'Reinforced Double-Stitched & Dobby Borders',
+                'Certifications': 'GOTS Certified & OEKO-TEX Standard 100'
               },
               metrics: [
                 { label: 'Wash Cycle Life', value: '300+ Washes' },
                 { label: 'Absorbency Speed', value: '99%' }
-              ]
-            },
-            {
-              id: 'p_series',
-              title: 'P Series Premium Retail Towels',
-              tag: 'TERRY // P SERIES',
-              desc: 'Crafted with premium long-staple combed cotton for supreme plushness. Features elegant low-profile dobby borders that match high-end home and boutique aesthetics.',
-              image: heroTowelsImg,
-              specs: {
-                'Cotton Grade': '100% Egyptian long-staple cotton',
-                'GSM Weight': '650 GSM Ultra Plush',
-                'Border Style': 'Low-profile textured dobby design',
-                'Softness Finish': 'Tensionless eco-friendly softening'
-              },
-              metrics: [
-                { label: 'Softness Rating', value: '98%' },
-                { label: 'Pile Density Score', value: '97%' }
               ]
             }
           ]
@@ -399,109 +377,60 @@ const CollectionsPage = ({
           </div>
 
           {/* Showroom Cards List */}
-          <div>
-            {detailData.subProducts.map((prod, idx) => (
-              <div className="collection-row" key={prod.id}>
-
-                {/* Image Pane Container */}
-                <div className="collection-img-pane">
-                  {prod.images ? (
-                    <div className="collection-multi-grid">
-                      {/* Left main image */}
-                      <div className="collection-img-frame" style={{ height: '100%' }}>
-                        <div className="collection-camera-grid"></div>
-                        <div className="collection-img-overlay" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <span className="collection-rec-dot"></span>
-                          CATALOG // {prod.tag}
-                        </div>
-                        <img
-                          className="collection-img"
-                          src={prod.images.main}
-                          alt={prod.title}
-                        />
-                        <div className="collection-img-coordinates">
-                          <span>COORDS: {detailData.coordinates}</span>
-                          <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <span className="collection-rec-dot" style={{ backgroundColor: '#22c55e', animation: 'collectionRecPulse 2s infinite' }}></span>
-                            VERIFIED // OK
-                          </span>
-                        </div>
-                      </div>
-                      {/* Right 2x2 grid of small images */}
-                      <div className="collection-small-grid">
-                        <div className="collection-img-frame" style={{ height: '100%' }}>
-                          <img className="collection-img" src={prod.images.pink} alt="Pink variety" />
-                        </div>
-                        <div className="collection-img-frame" style={{ height: '100%' }}>
-                          <img className="collection-img" src={prod.images.orange} alt="Orange variety" />
-                        </div>
-                        <div className="collection-img-frame" style={{ height: '100%' }}>
-                          <img className="collection-img" src={prod.images.coral} alt="Coral variety" />
-                        </div>
-                        <div className="collection-img-frame" style={{ height: '100%' }}>
-                          <img className="collection-img" src={prod.images.white} alt="White variety" />
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="collection-img-frame">
-                      <div className="collection-camera-grid"></div>
-                      <div className="collection-img-overlay" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span className="collection-rec-dot"></span>
-                        CATALOG // {prod.tag}
-                      </div>
+          <div className="collection-cards-grid">
+            {detailData.subProducts.map((prod, idx) => {
+              const activeImg = prod.image;
+              
+              return (
+                <div className="collection-product-card reveal-on-scroll reveal-up" key={prod.id}>
+                  {/* Card Left: Image Container */}
+                  <div className="collection-product-card-visuals">
+                    {/* Card Image Area */}
+                    <div className="collection-product-card-img-wrapper">
                       <img
                         className="collection-img"
-                        src={prod.image}
+                        src={activeImg}
                         alt={prod.title}
+                        key={activeImg}
                       />
-                      <div className="collection-img-coordinates">
-                        <span>COORDS: {detailData.coordinates}</span>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <span className="collection-rec-dot" style={{ backgroundColor: '#22c55e', animation: 'collectionRecPulse 2s infinite' }}></span>
-                          VERIFIED // OK
-                        </span>
-                      </div>
                     </div>
-                  )}
-                </div>
+                  </div>
 
-                {/* Info & Telemetry Pane */}
-                <div className="collection-info-pane">
-                  <span className="collection-tag">{prod.tag}</span>
-                  <h2 className="collection-title">{prod.title}</h2>
-                  <p className="collection-desc">{prod.desc}</p>
+                  {/* Info Pane */}
+                  <div className="collection-product-info">
+                    <span className="collection-product-tag">{prod.tag}</span>
+                    <h3 className="collection-product-title">{prod.title}</h3>
+                    <p className="collection-product-desc">{prod.desc}</p>
 
-                  {/* Specs & Metrics data grids */}
-                  <div className="collection-data-grid">
-
-                    {/* Specifications Box */}
-                    <div className="collection-spec-box">
-                      <span className="collection-spec-title">PRODUCT SPECIFICATIONS</span>
-                      {Object.entries(prod.specs).map(([key, val]) => (
-                        <div className="collection-spec-row" key={key}>
-                          <span className="collection-spec-key">{key}</span>
-                          <span className="collection-spec-val">{val}</span>
-                        </div>
-                      ))}
+                    {/* Specs Box */}
+                    <div className="collection-card-specs">
+                      <span className="collection-card-specs-title">PRODUCT SPECIFICATIONS</span>
+                      <div className="collection-card-specs-list">
+                        {Object.entries(prod.specs).map(([key, val]) => (
+                          <div className="collection-card-spec-row" key={key}>
+                            <span className="collection-card-spec-key">{key}</span>
+                            <span className="collection-card-spec-val">{val}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Metrics Box */}
-                    <div className="collection-metric-box">
+                    <div className="collection-card-metrics">
                       {prod.metrics.map((metric, mIdx) => {
                         const isPercentage = metric.value.endsWith('%');
                         const numericVal = isPercentage ? parseFloat(metric.value) : null;
 
                         return (
-                          <div className="collection-metric-card" key={mIdx}>
-                            <div className="collection-metric-icon">
+                          <div className="collection-card-metric-item" key={mIdx}>
+                            <div className="collection-card-metric-icon">
                               {mIdx === 0 && (
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                 </svg>
                               )}
                               {mIdx === 1 && (
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                   <circle cx="12" cy="12" r="10" />
                                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                   <path d="M2 12h20" />
@@ -509,20 +438,20 @@ const CollectionsPage = ({
                               )}
                             </div>
 
-                            <div className="collection-metric-details">
-                              <span className="collection-metric-label">{metric.label}</span>
+                            <div className="collection-card-metric-details">
+                              <span className="collection-card-metric-label">{metric.label}</span>
                               {isPercentage ? (
                                 <>
-                                  <div className="collection-metric-value-row">
-                                    <span className="collection-metric-value">{metric.value}</span>
-                                    <span style={{ fontSize: '0.62rem', color: '#55c57a', fontWeight: 'bold', fontFamily: 'monospace' }}>COMPLIANT</span>
+                                  <div className="collection-card-metric-value-row">
+                                    <span className="collection-card-metric-value">{metric.value}</span>
+                                    <span style={{ fontSize: '0.55rem', color: '#55c57a', fontWeight: 'bold', fontFamily: 'monospace' }}>COMPLIANT</span>
                                   </div>
-                                  <div className="collection-metric-bar-track">
-                                    <div className="collection-metric-bar-fill" style={{ width: `${numericVal}%` }}></div>
+                                  <div className="collection-card-metric-bar">
+                                    <div className="collection-card-metric-bar-fill" style={{ width: `${numericVal}%` }}></div>
                                   </div>
                                 </>
                               ) : (
-                                <span className="collection-metric-tag">{metric.value}</span>
+                                <span className="collection-card-metric-tag">{metric.value}</span>
                               )}
                             </div>
                           </div>
@@ -531,11 +460,9 @@ const CollectionsPage = ({
                     </div>
 
                   </div>
-
                 </div>
-
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Action CTAs */}
@@ -577,108 +504,62 @@ const CollectionsPage = ({
           </p>
         </div>
 
-        {/* 3D Coverflow Carousel Container */}
-        <div className="coverflow-container" style={{ margin: '60px 0' }}>
-          <div className="coverflow-wrapper">
-            {COLLECTIONS_DATA.map((item, index) => {
-              const isActive = index === activeSuiteIndex;
-              return (
-                <div
-                  key={index}
-                  className={`coverflow-card ${isActive ? 'active' : ''}`}
-                  style={getCoverflowStyle(index)}
-                  onClick={() => {
-                    if (!isActive) {
-                      setActiveSuiteIndex(index);
-                    } else {
-                      handleActiveCardClick(index);
-                    }
-                  }}
-                >
-                  <div
-                    className="coverflow-card-bg"
-                    style={{
-                      backgroundImage: `url(${item.image})`,
-                      backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
-                      backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
-                      backgroundRepeat: 'no-repeat'
-                    }}
-                  ></div>
-                  <div className="coverflow-card-overlay"></div>
-                  <div className="coverflow-info">
-                    <h3>{item.title}</h3>
-                    <p>{item.subtitle}</p>
-                    {isActive && (
-                      <p style={{ textTransform: 'none', color: 'var(--text-muted)', fontSize: '0.78rem', marginTop: '8px', lineHeight: '1.4', letterSpacing: 'normal' }}>
-                        {item.desc}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Controls Bar with Navigation and Pagination */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '40px' }} className="coverflow-controls-bar">
-          <button
-            onClick={handlePrevSuite}
-            aria-label="Previous Slide"
-            style={{
-              background: 'rgba(26, 25, 23, 0.45)',
-              border: '1px solid rgba(250, 248, 245, 0.08)',
-              color: '#FAF8F5',
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              backdropFilter: 'blur(8px)',
-              padding: 0
-            }}
-            className="coverflow-bottom-nav-btn"
-          >
-            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&larr;</span>
-          </button>
-
-          {/* Pagination dots */}
-          <div className="coverflow-dots" style={{ margin: 0 }}>
-            {COLLECTIONS_DATA.map((_, index) => (
-              <button
+        {/* Category Showroom Grid */}
+        <div className="collections-overview-grid">
+          {COLLECTIONS_DATA.map((item, index) => {
+            const getTabFromTitle = (title) => {
+              const mapping = {
+                'N-Series Towels': 'towels',
+                'P-Series Towels': 'towels',
+                'Duvet Covers': 'duvet_covers',
+                'Kitchen Linen': 'kitchen_linen',
+                'Salon Towels': 'salon_towels',
+                'Safety Wear': 'safety_wear',
+                'Thermal Wear': 'thermal',
+                'Bath Blankets': 'bath_blankets'
+              };
+              return mapping[title] || 'towels';
+            };
+            const targetTab = getTabFromTitle(item.title);
+            
+            return (
+              <div
                 key={index}
-                className={`coverflow-dot ${index === activeSuiteIndex ? 'active' : ''}`}
-                onClick={() => setActiveSuiteIndex(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              ></button>
-            ))}
-          </div>
+                className="collection-category-card reveal-on-scroll reveal-up"
+                onClick={() => {
+                  window.location.hash = `#/collections?tab=${targetTab}`;
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <div className="collection-category-card-img-box">
+                  <div className="collection-category-card-badge">
+                    {targetTab === 'safety_wear' ? 'PPE' : targetTab === 'bath_blankets' ? 'Clinical' : 'Terry & Linens'}
+                  </div>
+                  <img
+                    className="collection-category-card-img"
+                    src={item.image}
+                    alt={item.title}
+                    style={{
+                      objectFit: item.title === 'Safety Wear' ? 'contain' : 'cover',
+                      backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
+                    }}
+                  />
+                  <div className="collection-category-card-overlay"></div>
+                </div>
 
-          <button
-            onClick={handleNextSuite}
-            aria-label="Next Slide"
-            style={{
-              background: 'rgba(26, 25, 23, 0.45)',
-              border: '1px solid rgba(250, 248, 245, 0.08)',
-              color: '#FAF8F5',
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              backdropFilter: 'blur(8px)',
-              padding: 0
-            }}
-            className="coverflow-bottom-nav-btn"
-          >
-            <span style={{ fontSize: '1.2rem', display: 'block', transform: 'translateY(-1px)' }}>&rarr;</span>
-          </button>
+                <div className="collection-category-card-info">
+                  <span className="collection-category-card-subtitle">{item.subtitle}</span>
+                  <h3 className="collection-category-card-title">{item.title}</h3>
+                  <p className="collection-category-card-desc">{item.desc}</p>
+                  
+                  <button className="collection-category-card-btn">
+                    <span>Explore Specifications</span>
+                    <span style={{ fontSize: '1rem' }}>&rarr;</span>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Back to Home CTA */}
