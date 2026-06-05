@@ -490,7 +490,7 @@ const CollectionsPage = ({
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                           {Object.entries(prod.images).map(([colorKey, colorImg]) => {
                             const isSelected = (selectedImages[prod.id] || 'main') === colorKey;
-                            
+
                             // Map color key to clean CSS backgrounds
                             const colorMap = {
                               main: '#EAE6DF',

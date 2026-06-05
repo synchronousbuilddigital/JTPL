@@ -27,13 +27,16 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+
   .showroom-nav-btn {
     padding: 12px 10px !important;
     border-radius: 8px !important;
   }
+
   .showroom-nav-title {
     font-size: 0.95rem !important;
   }
+
   .showroom-nav-num {
     font-size: 0.65rem !important;
   }
@@ -44,13 +47,16 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
+
   .showroom-nav-btn {
     padding: 8px 6px !important;
     border-radius: 6px !important;
   }
+
   .showroom-nav-title {
     font-size: 0.75rem !important;
   }
+
   .showroom-nav-num {
     font-size: 0.55rem !important;
     margin-bottom: 3px !important;
@@ -133,27 +139,33 @@
 }
 
 @media (max-width: 991px) {
+
   .showroom-row,
   .showroom-row:nth-child(even) {
     flex-direction: row;
     gap: 20px;
     margin-bottom: 40px;
   }
+
   .showroom-img-pane {
     flex: 0 0 45%;
     width: 45%;
   }
+
   .showroom-info-pane {
     flex: 0 0 55%;
     width: 55%;
   }
+
   .showroom-img-frame {
     height: 200px;
   }
+
   .showroom-title {
     font-size: 1.1rem !important;
     margin-bottom: 10px !important;
   }
+
   .showroom-desc {
     font-size: 0.72rem !important;
     line-height: 1.4 !important;
@@ -162,25 +174,30 @@
 }
 
 @media (max-width: 576px) {
+
   .showroom-row,
   .showroom-row:nth-child(even) {
     gap: 12px;
     margin-bottom: 24px;
   }
+
   .showroom-img-pane {
     padding: 6px !important;
     border-radius: 8px !important;
   }
+
   .showroom-img-frame {
     height: 140px;
     border-radius: 6px !important;
   }
+
   .showroom-img-overlay {
     top: 10px !important;
     left: 10px !important;
     font-size: 0.55rem !important;
     padding: 3px 6px !important;
   }
+
   .showroom-img-coordinates {
     bottom: 10px !important;
     left: 10px !important;
@@ -364,41 +381,50 @@
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
+
   .showroom-spec-box {
     padding: 12px !important;
     border-radius: 8px !important;
   }
+
   .showroom-spec-title {
     font-size: 0.6rem !important;
     margin-bottom: 8px !important;
     padding-bottom: 4px !important;
   }
+
   .showroom-spec-row {
     font-size: 0.65rem !important;
     padding: 4px 0 !important;
     gap: 6px !important;
   }
+
   .showroom-metric-card {
     padding: 8px !important;
     border-radius: 8px !important;
     gap: 8px !important;
   }
+
   .showroom-metric-icon {
     width: 28px !important;
     height: 28px !important;
     border-radius: 6px !important;
   }
+
   .showroom-metric-icon svg {
     width: 14px !important;
     height: 14px !important;
   }
+
   .showroom-metric-label {
     font-size: 0.58rem !important;
     margin-bottom: 2px !important;
   }
+
   .showroom-metric-value {
     font-size: 0.85rem !important;
   }
+
   .showroom-metric-tag {
     font-size: 0.55rem !important;
     padding: 1px 4px !important;
@@ -574,9 +600,224 @@
   color: var(--text-primary);
 }
 
-@media (max-width: 480px) {
-  .showroom-data-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+/* ==========================================================================
+   FACILITIES SUBPAGE MOBILE CUSTOMIZATIONS (PREMIUM RESPONSIVE TUNING)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .facilities-showroom-wrapper {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+  }
+  .showroom-nav-switcher {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+  .showroom-nav-btn {
+    padding: 8px 12px !important;
+  }
+  .showroom-nav-title {
+    font-size: 0.8rem !important;
   }
 }
+
+@media (max-width: 576px) {
+  .facilities-showroom-wrapper {
+    padding-top: 70px !important;
+    padding-bottom: 40px !important;
+  }
+  /* Keep side-by-side row design but scale metrics */
+  .showroom-row,
+  .showroom-row:nth-child(even) {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+  .showroom-img-pane {
+    flex: 0 0 42% !important;
+    width: 42% !important;
+    padding: 6px !important;
+    border-radius: 8px !important;
+  }
+  .showroom-info-pane {
+    flex: 0 0 58% !important;
+    width: 58% !important;
+  }
+  .showroom-img-frame {
+    height: 150px !important;
+    border-radius: 6px !important;
+  }
+  .showroom-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 4px !important;
+  }
+  .showroom-desc {
+    font-size: 0.62rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Data grid inside the info pane - stack vertically so items fit perfectly */
+  .showroom-data-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Swapper Navigation Buttons (Horizontal Swipe Scroll) */
+  .showroom-nav-switcher {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 6px !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 20px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .showroom-nav-switcher::-webkit-scrollbar {
+    display: none !important;
+  }
+  .showroom-nav-btn {
+    flex: 0 0 auto !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+  }
+  .showroom-nav-num {
+    font-size: 0.6rem !important;
+    margin-bottom: 2px !important;
+  }
+  .showroom-nav-title {
+    font-size: 0.68rem !important;
+  }
+
+  /* Spec & Metric Card styles */
+  .showroom-spec-box, 
+  .showroom-metric-card {
+    padding: 10px !important;
+    border-radius: 8px !important;
+  }
+  .showroom-spec-title {
+    font-size: 0.55rem !important;
+    margin-bottom: 6px !important;
+  }
+  .showroom-spec-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02) !important;
+  }
+  .showroom-spec-key {
+    font-size: 0.52rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+  }
+  .showroom-spec-val {
+    font-size: 0.62rem !important;
+    color: var(--text-primary) !important;
+    text-align: left !important;
+    font-weight: 500 !important;
+  }
+  .showroom-metric-label {
+    font-size: 0.55rem !important;
+    margin-bottom: 2px !important;
+  }
+  .showroom-metric-value {
+    font-size: 0.85rem !important;
+  }
+  .showroom-metric-tag {
+    font-size: 0.55rem !important;
+    padding: 1px 4px !important;
+    margin-top: 2px !important;
+  }
+  .showroom-tag {
+    font-size: 0.5rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Glassmorphism & Precise Telemetry Overlays on mobile */
+  .showroom-img-overlay {
+    top: 6px !important;
+    left: 6px !important;
+    padding: 3px 6px !important;
+    font-size: 0.48rem !important;
+    background: rgba(17, 17, 17, 0.8) !important;
+    backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 4px !important;
+  }
+  .showroom-img-coordinates {
+    bottom: 6px !important;
+    left: 6px !important;
+    right: 6px !important;
+    padding: 3px 6px !important;
+    font-size: 0.48rem !important;
+    background: rgba(17, 17, 17, 0.8) !important;
+    backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 4px !important;
+    justify-content: center !important;
+  }
+  .showroom-img-coordinates span:first-child {
+    display: none !important;
+  }
+  .facilities-audit-wrapper {
+    margin-top: 40px !important;
+    padding-top: 32px !important;
+  }
+  .facilities-audit-cta-overlay {
+    padding: 30px 16px !important;
+  }
+  .facilities-audit-heading {
+    font-size: 1.25rem !important;
+    margin-bottom: 16px !important;
+    line-height: 1.3 !important;
+  }
+  .facilities-audit-badge {
+    font-size: 0.6rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Base Facilities Audit Styling */
+.facilities-audit-wrapper {
+  margin-top: 80px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 64px;
+}
+.facilities-audit-cta {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+.facilities-audit-cta-overlay {
+  padding: 60px 40px;
+}
+.facilities-audit-badge {
+  background: rgba(239, 131, 84, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(239, 131, 84, 0.3);
+  padding: 6px 16px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.facilities-audit-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: #FAF8F5;
+  font-family: var(--font-serif);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+
+[data-theme="light"] .facilities-audit-heading {
+  color: var(--text-primary);
+}
+

@@ -1,10 +1,10 @@
 import React from 'react';
 import { FACILITY_STEPS } from '../constants/data';
 
-const Facilities = ({ 
-  activeFacilityIndex, 
-  setActiveFacilityIndex, 
-  hoveredHotspot, 
+const Facilities = ({
+  activeFacilityIndex,
+  setActiveFacilityIndex,
+  hoveredHotspot,
   setHoveredHotspot,
   setCurrentPage
 }) => {

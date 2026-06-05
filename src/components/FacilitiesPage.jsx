@@ -583,13 +583,13 @@ const FacilitiesPage = ({
         </div>
 
         {/* Operational Audit CTA Section */}
-        <div style={{ marginTop: '80px', borderTop: '1px solid var(--border-color)', paddingTop: '64px' }}>
-          <div className="contact-bottom-cta" style={{ borderRadius: '16px', overflow: 'hidden' }}>
-            <div className="contact-bottom-cta-overlay" style={{ padding: '60px 40px' }}>
-              <span className="contact-cta-badge" style={{ background: 'rgba(239, 131, 84, 0.1)', color: 'var(--accent)', border: '1px solid rgba(239, 131, 84, 0.3)', padding: '6px 16px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '0.72rem', fontWeight: 700, display: 'inline-block', marginBottom: '16px' }}>
+        <div className="facilities-audit-wrapper">
+          <div className="contact-bottom-cta facilities-audit-cta">
+            <div className="contact-bottom-cta-overlay facilities-audit-cta-overlay">
+              <span className="contact-cta-badge facilities-audit-badge">
                 Operations Audit
               </span>
-              <h2 className="contact-cta-heading" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#FAF8F5', fontFamily: 'var(--font-serif)', marginBottom: '24px', lineHeight: '1.25' }}>
+              <h2 className="contact-cta-heading facilities-audit-heading">
                 Request a Real-Time Operations Telemetry Review
               </h2>
               <button

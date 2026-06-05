@@ -57,12 +57,6 @@ const Footer = ({ setCurrentPage }) => {
                 </svg>
               </a>
             </div>
-
-            {/* Live Operational Status Pill */}
-            <div className="footer-status-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(34, 197, 94, 0.05)', border: '1px solid rgba(34, 197, 94, 0.12)', borderRadius: '20px', padding: '6px 12px', fontSize: '0.72rem', fontFamily: 'monospace', color: '#22c55e', marginTop: '24px' }}>
-              <span className="status-pulse-dot" style={{ display: 'inline-block', width: '6px', height: '6px', background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e' }}></span>
-              <span>OPERATIONS ONLINE // Madurai HQ</span>
-            </div>
           </div>
 
           {/* Navigation Links Column */}
