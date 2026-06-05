@@ -3,8 +3,17 @@ import { ESG_INITIATIVES } from '../constants/data';
 
 const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
   return (
-    <section id="responsibility" className="section-padding" style={{ borderBottom: '1px solid var(--border-color)', transition: 'background-color var(--transition)' }}>
-      <div className="container">
+    <section
+      id="responsibility"
+      className="section-padding esg-section-wrapper"
+      style={{ borderBottom: '1px solid var(--border-color)', transition: 'background-color var(--transition)' }}
+    >
+      {/* Dynamic Background Elements */}
+      <div className="esg-grid-overlay"></div>
+      <div className="esg-bg-glow-1"></div>
+      <div className="esg-bg-glow-2"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="text-center reveal-on-scroll reveal-up" style={{ marginBottom: '64px' }}>
           <span className="badge">Ethical & Green Commitment</span>
           <h2>We are responsible</h2>
@@ -36,6 +45,7 @@ const ESG = ({ activeEsgIndex, setActiveEsgIndex }) => {
           {/* Central Orbital Pulse Emblem */}
           <div className="esg-center-hub">
             <div className={`esg-orbit-rim pulse-${ESG_INITIATIVES[activeEsgIndex].id}`}>
+              <div className="esg-orbit-rim-inner-dashed"></div>
               <div className="esg-orbit-rim-dashed"></div>
               <div className="esg-core-emblem">
                 <span className="esg-emblem-logo">JTPL</span>
