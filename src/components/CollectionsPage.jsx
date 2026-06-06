@@ -7,11 +7,14 @@ import nSeriesMain from '../assets/n_series_main.png';
 import luxuryTerryTowel from '../assets/luxury_terry_towel.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
-import salonTowelsCat from '../assets/salon_towels_cat.png';
+import salonTowelsCat from '../assets/salon_towels_unblurred.png';
 import safetyPpeGown from '../assets/safety_ppe_gown.png';
 import safetyMaskBlue from '../assets/safety_mask_blue.png';
 import safetyMaskWhite from '../assets/safety_mask_white.png';
-import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
+import thermalBlanketWhite from '../assets/thermal_blanket_white.png';
+import thermalBlanketBlue from '../assets/thermal_blanket_blue.png';
+import thermalBlanketPastel from '../assets/thermal_blanket_pastel.png';
+import thermalBlanketMulti from '../assets/thermal_blanket_multi.png';
 import bathBlanketMain from '../assets/bath_blanket_main.png';
 import bathBlanketPink from '../assets/bath_blanket_pink.png';
 import bathBlanketOrange from '../assets/bath_blanket_orange.png';
@@ -22,6 +25,7 @@ import percaleCrispCover from '../assets/percale_crisp_cover.png';
 import kitchenLinenBlue from '../assets/kitchen_linen_blue.png';
 import kitchenLinenStripe from '../assets/kitchen_linen_stripe.png';
 import kitchenLinenWaffle from '../assets/kitchen_linen_waffle.png';
+import kitchenLinenTealBlue from '../assets/kitchen_linen_teal_blue.png';
 import nSeriesWhite from '../assets/n_series_white.png';
 import nSeriesBrown from '../assets/n_series_brown.png';
 import nSeriesCoral from '../assets/n_series_coral.png';
@@ -183,7 +187,8 @@ const CollectionsPage = ({
                 main: kitchenLinenImg,
                 blue: kitchenLinenBlue,
                 stripe: kitchenLinenStripe,
-                waffle: kitchenLinenWaffle
+                waffle: kitchenLinenWaffle,
+                teal_blue: kitchenLinenTealBlue
               },
               specs: {
                 'Material': '100% Combed Cotton',
@@ -296,7 +301,13 @@ const CollectionsPage = ({
               title: 'Breathable Leno Blankets',
               tag: 'CELLULAR // INSULATION',
               desc: 'Classic open-grid cellular design. The cross-warp leno weave structures trap air pockets to insulate in cool conditions while venting body heat in warm environments.',
-              image: thermalBlanketsCat,
+              image: thermalBlanketWhite,
+              images: {
+                white: thermalBlanketWhite,
+                blue: thermalBlanketBlue,
+                pastel: thermalBlanketPastel,
+                classic: thermalBlanketMulti
+              },
               specs: {
                 'Weave Tech': 'Leno structural cross-warp looms',
                 'Fiber Grade': '100% Organic Ring-spun Cotton',
@@ -460,7 +471,8 @@ const CollectionsPage = ({
           {/* Showroom Cards List */}
           <div className="collection-cards-grid">
             {detailData.subProducts.map((prod, idx) => {
-              const activeImg = prod.images ? (prod.images[selectedImages[prod.id] || 'main'] || prod.image) : prod.image;
+              const defaultKey = prod.images ? (prod.images.main ? 'main' : Object.keys(prod.images)[0]) : null;
+              const activeImg = prod.images ? (prod.images[selectedImages[prod.id] || defaultKey] || prod.image) : prod.image;
 
               return (
                 <div className="collection-product-card reveal-on-scroll reveal-up" key={prod.id}>
@@ -489,7 +501,7 @@ const CollectionsPage = ({
                         <span className="collection-card-specs-title" style={{ display: 'block', marginBottom: '8px' }}>AVAILABLE SHADES</span>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                           {Object.entries(prod.images).map(([colorKey, colorImg]) => {
-                            const isSelected = (selectedImages[prod.id] || 'main') === colorKey;
+                            const isSelected = (selectedImages[prod.id] || defaultKey) === colorKey;
 
                             // Map color key to clean CSS backgrounds
                             const colorMap = {
@@ -497,7 +509,13 @@ const CollectionsPage = ({
                               white: '#FFFFFF',
                               pink: '#F5C6CB',
                               orange: '#EF8354',
-                              coral: '#FF7F50'
+                              coral: '#FF7F50',
+                              beige: '#D1C2A5',
+                              cream: '#F3EFE0',
+                              blue: '#3B6E8C',
+                              pastel: '#E5D3B3',
+                              classic: '#5F8575',
+                              teal_blue: '#4A8588'
                             };
 
                             return (

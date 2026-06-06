@@ -6,9 +6,9 @@ import nSeriesMain from '../assets/n_series_main.png';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
 import duvetCoversCat from '../assets/duvet_covers_cat.png';
-import salonTowelsCat from '../assets/salon_towels_cat.png';
+import salonTowelsCat from '../assets/salon_towels_unblurred.png';
 import safetyWearCat from '../assets/safety_wear_cat.png';
-import thermalBlanketsCat from '../assets/thermal_blankets_cat.png';
+import thermalBlanketsCat from '../assets/thermal_blanket_white.png';
 import bathBlanketsCat from '../assets/bath_blankets_cat.png';
 import qualityLabImg from '../assets/quality_lab.png';
 
