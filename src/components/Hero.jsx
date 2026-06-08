@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HERO_TABS } from '../constants/data';
 import weavingLoomsImg from '../assets/weaving_looms.png';
-import kitchenLinenImg from '../assets/kitchen_linen.png';
+import heroStitching from '../assets/hero_stitching.png';
 
 const TypingTitle = ({ text }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -97,7 +97,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
                   <div className="kinetic-capsule spotlight-frame">
                     <img
                       className="kinetic-img"
-                      src={kitchenLinenImg}
+                      src={heroStitching}
                       alt="Macro stitching details"
                     />
                   </div>
@@ -173,7 +173,7 @@ const Hero = ({ heroTab, setHeroTab, setCurrentPage }) => {
               <div className="kinetic-capsule spotlight-frame">
                 <img
                   className="kinetic-img"
-                  src={kitchenLinenImg}
+                  src={heroStitching}
                   alt="Macro stitching details"
                 />
               </div>

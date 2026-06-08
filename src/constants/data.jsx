@@ -2,6 +2,8 @@ import React from 'react';
 
 // Import newly generated photographic assets
 import heroTowelsImg from '../assets/hero_towels.png';
+import heroSpinning from '../assets/hero_spinning.png';
+import heroStitching from '../assets/hero_stitching.png';
 import nSeriesMain from '../assets/n_series_main.png';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
@@ -160,7 +162,7 @@ export const HERO_TABS = [
     title: 'Textile quality spun from the source.',
     desc: 'Transforming premium Indian cotton into high-grade combed yarns at our Perungudi facility, equipped with 35,000 Swiss Rieter spindles.',
     metric: { value: '14,200 RPM', label: 'Average Spindle Speed' },
-    image: heroTowelsImg,
+    image: heroSpinning,
     badgeText: '35K SPINDLES'
   },
   {
@@ -178,7 +180,7 @@ export const HERO_TABS = [
     title: 'Finished for the global market.',
     desc: 'Twelve automated hemming lines and manual inspection teams delivering double-needle secured selvedge textiles to marine export standards.',
     metric: { value: '12 STITCH-LINES', label: 'Fabrication Throughput' },
-    image: kitchenLinenImg,
+    image: heroStitching,
     badgeText: 'DOUBLE-NEEDLE'
   }
 ];

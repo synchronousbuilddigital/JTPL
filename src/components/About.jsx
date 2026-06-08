@@ -1,5 +1,5 @@
 import React from 'react';
-import kitchenLinenImg from '../assets/kitchen_linen.png';
+import aboutShowcaseImg from '../assets/about_showcase.png';
 
 const About = ({ setCurrentPage }) => {
   return (
@@ -9,8 +9,8 @@ const About = ({ setCurrentPage }) => {
           <div className="overview-visual reveal-on-scroll reveal-left">
             <img
               className="overview-main-img"
-              src={kitchenLinenImg}
-              alt="Styled premium waffle kitchen linen manufactured in Madurai"
+              src={aboutShowcaseImg}
+              alt="Vertical spinning and weaving manufacturing facilities at Jasmine Madurai"
             />
             <div className="overview-offset-card">
               <h4>Established 1994</h4>
