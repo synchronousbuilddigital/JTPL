@@ -6,7 +6,7 @@ import heroTowelsImg from '../assets/hero_towels.png';
 import nSeriesMain from '../assets/n_series_main.png';
 import luxuryTerryTowel from '../assets/luxury_terry_towel.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
-import duvetCoversCat from '../assets/duvet_covers_cat.png';
+import duvetCoversCat from '../assets/duvet_covers_unblurred.png';
 import salonTowelsCat from '../assets/salon_towels_unblurred.png';
 import safetyPpeGown from '../assets/safety_ppe_gown.png';
 import safetyMaskBlue from '../assets/safety_mask_blue.png';
@@ -20,6 +20,8 @@ import bathBlanketPink from '../assets/bath_blanket_pink.png';
 import bathBlanketOrange from '../assets/bath_blanket_orange.png';
 import bathBlanketCoral from '../assets/bath_blanket_coral.png';
 import bathBlanketWhite from '../assets/bath_blanket_white.png';
+import multiStripeBathBlanket from '../assets/multi_stripe_bath_blanket.png';
+import herringboneBathBlanket from '../assets/herringbone_bath_blanket.png';
 import insulatedOvenMitts from '../assets/insulated_oven_mitts.png';
 import percaleCrispCover from '../assets/percale_crisp_cover.png';
 import kitchenLinenBlue from '../assets/kitchen_linen_blue.png';
@@ -33,6 +35,10 @@ import nSeriesPeach from '../assets/n_series_peach.png';
 import nSeriesMagenta from '../assets/n_series_magenta.png';
 import pSeriesMain from '../assets/p_series_main.png';
 import pSeriesGold from '../assets/p_series_gold.png';
+import wovenBagEarth from '../assets/woven_bag_earth.png';
+import wovenBagParis from '../assets/woven_bag_paris.png';
+import bathrobeHanging from '../assets/bathrobe_hanging.png';
+import bathrobeFolded from '../assets/bathrobe_folded.png';
 
 import './CollectionsPage.css';
 
@@ -94,6 +100,92 @@ const CollectionsPage = ({
   // Lookup data for each detailed collection page
   const getCollectionDetail = (tab) => {
     switch (tab) {
+      case 'bath_robes':
+        return {
+          title: 'Premium Terry & Velour Bath Robes',
+          badge: '08 // BATH ROBES',
+          description: 'Luxury ring-spun combed cotton terry and velour robes designed for global hospitality, luxury spa, and high-end retail brands.',
+          coordinates: '9.9176° N, 78.1560° E',
+          subProducts: [
+            {
+              id: 'bathrobe_classic_hanging',
+              title: 'Hotel Classic Shawl Collar Robe',
+              tag: 'TERRY // CLASSIC',
+              desc: 'Premium combed cotton terry cloth robe featuring a classic shawl collar, deep front pockets, and a double-stitched self-belt. Soft, highly absorbent, and designed for commercial wash resilience.',
+              image: bathrobeHanging,
+              specs: {
+                'Fiber Blend': '100% Combed Ring-Spun Cotton',
+                'Fabric Style': 'Double-sided high-loop cotton terry',
+                'Design Detail': 'Shawl collar with double belt loops',
+                'Average Weight': '450 GSM Luxury Spa Grade'
+              },
+              metrics: [
+                { label: 'Absorbency Rating', value: '98%' },
+                { label: 'Durability Index', value: '300+ Washes' }
+              ]
+            },
+            {
+              id: 'bathrobe_folded_terry',
+              title: 'Luxury Kimono Terry Robe',
+              tag: 'TERRY // LUXURY',
+              desc: 'Plush low-twist terry robe styled in an elegant kimono cut, offering rapid drying and a soft skin feel for premium boutique hotel guests.',
+              image: bathrobeFolded,
+              specs: {
+                'Fiber Blend': '90% Combed Cotton / 10% Polyester Blend',
+                'Fabric Style': 'Low-twist premium terry loops',
+                'Design Detail': 'Kimono sleeve styling, flat cuffs',
+                'Average Weight': '400 GSM Hospitality Grade'
+              },
+              metrics: [
+                { label: 'Softness Index', value: '100%' },
+                { label: 'Drying Efficiency', value: '95%' }
+              ]
+            }
+          ]
+        };
+      case 'woven_bags':
+        return {
+          title: 'Premium Woven Bags & Totes',
+          badge: '08 // WOVEN BAGS',
+          description: 'Eco-friendly organic cotton canvas and jute shopping bags with high-tensile handles and premium screen-printed motifs, designed for retail brands, corporate merchandising, and promotion.',
+          coordinates: '9.9392° N, 78.1218° E',
+          subProducts: [
+            {
+              id: 'woven_bag_earth',
+              title: 'Save Earth Canvas Tote',
+              tag: 'ECO // CANVAS',
+              desc: 'GOTS-certified organic cotton canvas bag featuring an eco-friendly water-based Save Earth print. Designed for retail, exhibitions, and green brand promotions.',
+              image: wovenBagEarth,
+              specs: {
+                'Fiber Blend': '100% Organic Cotton Canvas',
+                'Weave Type': 'Heavy Woven Canvas',
+                'Handles': 'Self-fabric double-stitched shoulder straps',
+                'Average Weight': '280 GSM Eco-Grade'
+              },
+              metrics: [
+                { label: 'Organic Certification', value: '100% GOTS' },
+                { label: 'Strap Strength Test', value: 'Up to 15 kg' }
+              ]
+            },
+            {
+              id: 'woven_bag_paris',
+              title: 'Parisian Doodle Cotton-Jute Tote',
+              tag: 'RETAIL // JUTE',
+              desc: 'Premium woven retail shopping bag featuring high-durability jute handles and a creative illustrated Paris doodle motif, ideal for boutiques and souvenir merchandising.',
+              image: wovenBagParis,
+              specs: {
+                'Fiber Blend': '80% Cotton / 20% Jute blend',
+                'Weave Type': 'Textured Linen-Canvas Weave',
+                'Handles': 'Heavy-duty rolled Jute cord handles',
+                'Average Weight': '320 GSM Retail Grade'
+              },
+              metrics: [
+                { label: 'Material Blend', value: '80% Cot / 20% Jute' },
+                { label: 'Strap Strength Test', value: 'Up to 20 kg' }
+              ]
+            }
+          ]
+        };
       case 'bath_blankets':
         return {
           title: 'Patient Care Napped Bath Blankets',
@@ -107,13 +199,6 @@ const CollectionsPage = ({
               tag: 'CLINICAL // WRAPS',
               desc: 'Double-sided heavy flannel sheets designed for post-operative patient care. Retains body heat rapidly while maintaining a soft, non-abrasive touch against sensitive skin, standing up to intensive hospital laundry sanitization.',
               image: bathBlanketMain,
-              images: {
-                main: bathBlanketMain,
-                pink: bathBlanketPink,
-                orange: bathBlanketOrange,
-                coral: bathBlanketCoral,
-                white: bathBlanketWhite
-              },
               specs: {
                 'Fiber Blend': '80% Organic Cotton / 20% Polyester',
                 'Napping Style': 'Double-sided high-density brushed nap',
@@ -123,6 +208,40 @@ const CollectionsPage = ({
               metrics: [
                 { label: 'Thermal Retention', value: '98%' },
                 { label: 'Hypoallergenic Rating', value: '100%' }
+              ]
+            },
+            {
+              id: 'multi_stripe_utility',
+              title: 'Multi-Stripe Utility Bath Blankets',
+              tag: 'CLINICAL // UTILITY',
+              desc: 'Double-sided napped utility wraps featuring standard neutral multi-stripes, engineered for patient dignity and high thermal retention in emergency care.',
+              image: multiStripeBathBlanket,
+              specs: {
+                'Fiber Blend': '85% Cotton / 15% Polyester',
+                'Napping Style': 'Double-sided standard nap',
+                'Design Pattern': 'Neutral horizontal multi-stripe blocks',
+                'Average Weight': '350 GSM B2B Utility Grade'
+              },
+              metrics: [
+                { label: 'Thermal Retention', value: '94%' },
+                { label: 'Laundry Durability', value: 'Excellent' }
+              ]
+            },
+            {
+              id: 'textured_herringbone',
+              title: 'Textured Herringbone Bath Blankets',
+              tag: 'CLINICAL // HERRINGBONE',
+              desc: 'Premium double-sided napped bath blankets with a textured herringbone structure, combining clinical-grade thermal properties with a highly durable weave.',
+              image: herringboneBathBlanket,
+              specs: {
+                'Fiber Blend': '90% Organic Cotton / 10% Polyester',
+                'Napping Style': 'Herringbone weave textured nap',
+                'Design Pattern': 'Elegant herringbone weave pattern',
+                'Average Weight': '360 GSM Clinical Grade'
+              },
+              metrics: [
+                { label: 'Thermal Retention', value: '96%' },
+                { label: 'Weave Strength', value: 'Superior' }
               ]
             }
           ]
@@ -433,7 +552,9 @@ const CollectionsPage = ({
       'salon_towels',
       'safety_wear',
       'thermal',
-      'bath_blankets'
+      'bath_blankets',
+      'bath_robes',
+      'woven_bags'
     ];
     const targetTab = tabs[index] || 'n_series';
     window.location.hash = `#/collections?tab=${targetTab}`;
@@ -618,7 +739,9 @@ const CollectionsPage = ({
                 'Salon Towels': 'salon_towels',
                 'Safety Wear': 'safety_wear',
                 'Thermal Wear': 'thermal',
-                'Bath Blankets': 'bath_blankets'
+                'Bath Blankets': 'bath_blankets',
+                'Bath Robes': 'bath_robes',
+                'Woven Bags': 'woven_bags'
               };
               return mapping[title] || 'towels';
             };
@@ -635,7 +758,7 @@ const CollectionsPage = ({
               >
                 <div className="collection-category-card-img-box">
                   <div className="collection-category-card-badge">
-                    {targetTab === 'safety_wear' ? 'PPE' : targetTab === 'bath_blankets' ? 'Clinical' : 'Terry & Linens'}
+                    {targetTab === 'safety_wear' ? 'PPE' : targetTab === 'bath_blankets' ? 'Clinical' : targetTab === 'woven_bags' ? 'Eco-Friendly' : targetTab === 'bath_robes' ? 'Luxury Spa' : 'Terry & Linens'}
                   </div>
                   <img
                     className="collection-category-card-img"

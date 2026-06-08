@@ -5,7 +5,7 @@ import heroTowelsImg from '../assets/hero_towels.png';
 import nSeriesMain from '../assets/n_series_main.png';
 import weavingLoomsImg from '../assets/weaving_looms.png';
 import kitchenLinenImg from '../assets/kitchen_linen.png';
-import duvetCoversCat from '../assets/duvet_covers_cat.png';
+import duvetCoversCat from '../assets/duvet_covers_unblurred.png';
 import salonTowelsCat from '../assets/salon_towels_unblurred.png';
 import safetyWearCat from '../assets/safety_wear_cat.png';
 import thermalBlanketsCat from '../assets/thermal_blanket_white.png';
@@ -16,6 +16,8 @@ import qualityLabImg from '../assets/quality_lab.png';
 import wetSoftFlowDyeingImg from '../assets/wet_soft_flow_dyeing_actual.png';
 import mfgAutoSpreadingImg from '../assets/mfg_auto_spreading_actual.png';
 import weavingDirectWarpingImg from '../assets/weaving_direct_warping_actual.png';
+import wovenBagEarth from '../assets/woven_bag_earth.png';
+import bathrobeHanging from '../assets/bathrobe_hanging.png';
 
 // B2B Collections Coverflow Database
 export const COLLECTIONS_DATA = [
@@ -26,7 +28,9 @@ export const COLLECTIONS_DATA = [
   { title: 'Salon Towels', subtitle: 'Professional grade', image: salonTowelsCat, desc: 'Vats-dyed salon and barbershop linens, chemically resistant to peroxides and hair bleach.' },
   { title: 'Safety Wear', subtitle: 'PPE kits', image: safetyWearCat, desc: 'High-barrier disposable isolation gowns and certified medical-grade protective face masks.' },
   { title: 'Thermal Wear', subtitle: 'Leno Cellular Weave', image: thermalBlanketsCat, desc: 'Classic cellular blankets constructed in breathable leno structures, providing temperature self-regulation.' },
-  { title: 'Bath Blankets', subtitle: 'Comfort range', image: bathBlanketsCat, desc: 'Heavily napped hospital flannel wraps designed to provide instant patient warmth and maximum comfort.' }
+  { title: 'Bath Blankets', subtitle: 'Comfort range', image: bathBlanketsCat, desc: 'Heavily napped hospital flannel wraps designed to provide instant patient warmth and maximum comfort.' },
+  { title: 'Bath Robes', subtitle: 'Hotel & spa range', image: bathrobeHanging, desc: 'Luxury ring-spun cotton terry and velour robes featuring double-belt loops, double-needle stitching, and custom sizing.' },
+  { title: 'Woven Bags', subtitle: 'Eco-friendly totes', image: wovenBagEarth, desc: 'Premium organic cotton canvas and jute shopping bags with high-tensile handles and screen-printed motifs.' }
 ];
 
 // Operational Facility data

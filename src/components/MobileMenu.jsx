@@ -33,6 +33,7 @@ const MobileMenu = ({ mobileMenuOpen, currentPage, setMobileMenuOpen }) => {
           </a>
           <ul style={{ listStyle: 'none', paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px', marginBottom: '10px' }}>
             <li><a href="#/collections?tab=bath_blankets" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Bath blankets</a></li>
+            <li><a href="#/collections?tab=bath_robes" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Bath robes</a></li>
             <li><a href="#/collections?tab=duvet_covers" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Duvet covers</a></li>
             <li><a href="#/collections?tab=kitchen_linen" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Kitchen linen</a></li>
             <li><a href="#/collections?tab=n_series" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ N series</a></li>
@@ -41,6 +42,7 @@ const MobileMenu = ({ mobileMenuOpen, currentPage, setMobileMenuOpen }) => {
             <li><a href="#/collections?tab=salon_towels" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Salon towels</a></li>
             <li><a href="#/collections?tab=thermal" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Thermal</a></li>
             <li><a href="#/collections?tab=towels" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Towels</a></li>
+            <li><a href="#/collections?tab=woven_bags" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textDecoration: 'none', display: 'block', padding: '2px 0' }}>↳ Woven bags</a></li>
 
           </ul>
         </li>

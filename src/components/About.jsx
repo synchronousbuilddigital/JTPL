@@ -30,9 +30,9 @@ const About = ({ setCurrentPage }) => {
             </p>
 
             <div>
-              <button 
-                className="hero-company-profile-link" 
-                style={{ fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }} 
+              <button
+                className="hero-company-profile-link"
+                style={{ fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                 onClick={() => {
                   setCurrentPage('about');
                   window.scrollTo(0, 0);

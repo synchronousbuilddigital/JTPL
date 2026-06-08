@@ -17,7 +17,7 @@ const TypingTitle = ({ text }) => {
         clearInterval(interval);
       }
     }, 35);
-    
+
     return () => clearInterval(interval);
   }, [text]);
 

@@ -6381,58 +6381,7 @@ p {
   animation: float-subtle 6s infinite ease-in-out;
 }
 
-/* Custom Cursor Styles */
-@media (pointer: fine) {
 
-  html,
-  body,
-  a,
-  button,
-  select,
-  input,
-  textarea,
-  [role="button"],
-  .nav-link,
-  .hero-company-profile-link {
-    cursor: none !important;
-  }
-
-  .custom-cursor-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent);
-    position: fixed;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-  }
-
-  .custom-cursor-ring {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--accent);
-    position: fixed;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transition: width 0.25s, height 0.25s, border-color 0.25s, background-color 0.25s;
-  }
-
-  .custom-cursor-hover .custom-cursor-dot {
-    width: 0px;
-    height: 0px;
-  }
-
-  .custom-cursor-hover .custom-cursor-ring {
-    width: 48px;
-    height: 48px;
-    background-color: rgba(239, 131, 84, 0.08);
-    border-color: var(--accent);
-  }
-}
 
 /* ==========================================================================
    RESPONSIBILITY SUB-PAGE STYLES

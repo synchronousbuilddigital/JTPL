@@ -49,7 +49,9 @@ const Collections = ({
                         'salon_towels',
                         'safety_wear',
                         'thermal',
-                        'bath_blankets'
+                        'bath_blankets',
+                        'bath_robes',
+                        'woven_bags'
                       ];
                       const targetTab = tabs[index] || 'n_series';
                       setCurrentPage('collections');
@@ -62,8 +64,8 @@ const Collections = ({
                     className="coverflow-card-bg"
                     style={{
                       backgroundImage: `url(${item.image})`,
-                      backgroundSize: item.title === 'Safety Wear' ? 'contain' : 'cover',
-                      backgroundColor: item.title === 'Safety Wear' ? '#808080' : 'transparent',
+                      backgroundSize: (item.title === 'Safety Wear' || item.title === 'Woven Bags') ? 'contain' : 'cover',
+                      backgroundColor: (item.title === 'Safety Wear' || item.title === 'Woven Bags') ? '#f5f5f5' : 'transparent',
                       backgroundRepeat: 'no-repeat'
                     }}
                   ></div>

@@ -25,6 +25,7 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen }) =>
               </a>
               <ul className="nav-dropdown-menu">
                 <li><a href="#/collections?tab=bath_blankets">Bath blankets</a></li>
+                <li><a href="#/collections?tab=bath_robes">Bath robes</a></li>
                 <li><a href="#/collections?tab=duvet_covers">Duvet covers</a></li>
                 <li><a href="#/collections?tab=kitchen_linen">Kitchen linen</a></li>
                 <li><a href="#/collections?tab=n_series">N series</a></li>
@@ -33,6 +34,7 @@ const Header = ({ scrolled, currentPage, mobileMenuOpen, setMobileMenuOpen }) =>
                 <li><a href="#/collections?tab=salon_towels">Salon towels</a></li>
                 <li><a href="#/collections?tab=thermal">Thermal</a></li>
                 <li><a href="#/collections?tab=towels">Towels</a></li>
+                <li><a href="#/collections?tab=woven_bags">Woven bags</a></li>
 
               </ul>
             </li>
